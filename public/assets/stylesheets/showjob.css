@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+.container-showjob{width:920px;}
+
+.text-showjob-xlg{font-size:22px;}
+.line-width{line-height:32px;}
+
+.box-corp{padding-top:35px;}
+    .box-corp-img{position:relative;width:150px;vertical-align:bottom;line-height:0;}
+    .box-corp-detail{position:relative;width:750px;}
+    .box-corp-detail .name{font-weight:normal;font-size:14px;}
+    .box-corp-detail .list-tag{position:absolute;top:-30px;}
+    .box-message{position:relative;display:inline-block;padding:5px;border:1px solid #f1764b;}
+    .box-message:after{position:absolute;top:-9px;left:28px;content:"";width:12px;height:9px;background:url("/images/showjob/bg_balloon_top.png")/*tpa=https://www.find-job.net/images/showjob/bg_balloon_top.png*/ no-repeat 0 0;}
+    .box-message dt{padding:3px 8px;display:inline-block;color:#fff;}
+    .box-message dd{padding:3px 8px;display:inline-block;}
+.box-corp-button{}
+    .box-corp-button .btn{width:170px;}
+
+.box-tab{margin:-20px -40px 0;}
+    .box-tab .tab{margin-top:0;}
+
+.btn-share{}
+    .btn-share li{padding-top:2px;}
+    .btn-share li.facebook{padding-top:0;}
+
+.btn-action{width:550px;}
+    .btn-action li{width:260px;}
+
+.box-detail-text{}
+
+.box-detail-img-horizonatal{width:328px;}
+    .box-detail-img-horizonatal img{width:328px;}
+
+.box-detail-img-vertical{width:270px;}
+    .box-detail-img-vertical img{width:270px;}
+
+.box-detail-img-sm-wrap{margin-right:-25px;}
+.box-detail-img-sm{width:270px;height:250px;margin-right:25px;}
+    .box-detail-img-sm img{width:270px;}
+
+.box-detail-img-md{}
+    .box-detail-img-md img{width:328px;}
+
+.box-comment{border:2px solid#f1764b;}
+    .box-comment-detail{width:620px;}
+    .box-comment img{width:240px;}
+
+.box-portfolio-detail{width:450px;}
+
+.box-portfolio-img{width:420px;}
+    .list-portfolio-thumbnail li{margin-right:9px;}
+    .list-portfolio-thumbnail img{width:75px;opacity:0.7;filter:alpha(opacity=70);-ms-filter:"alpha(opacity=70)";zoom:1;}
+    .list-portfolio-thumbnail a:hover img,
+    .list-portfolio-thumbnail .current img{border:2px solid #ff8900;box-sizing:border-box;opacity:1;filter:alpha(opacity=100);-ms-filter:"alpha(opacity=100)";}
+    .list-portfolio-thumbnail .active img{border:2px solid #ff8900;box-sizing:border-box;opacity:1;filter:alpha(opacity=100);-ms-filter:"alpha(opacity=100)";}
+
+.box-map-info dt{width:95px;}
+.box-map-info dd{width:785px;}
+
+.box-relation dt{width:100px;}
+.box-relation dd{width:788px;}
+.box-relation li{display:inline;padding-right:20px;}
+
+.box-category{}
+    .box-category dl{width:440px;}
+    .box-category dt{}
+
+.offer-modal{width:524px;}
+    .offer-modal .btn{width:160px;}
+
+.box-offer{}
+    .box-offer h2{border-bottom:1px solid #f1764b;}
+    .box-offer .arrow{float:left;width:157px;padding-right:26px;background:url("/images/top/icon_arrow.png")/*tpa=https://www.find-job.net/images/top/icon_arrow.png*/ no-repeat 165px 62px;}
+    .box-offer .arrow.last{padding-right:0;}
+    .box-offer .arrow p{padding-top:5px;}
+    .box-offer .link-support{margin:0 -15px;}
+
+.bookmark-modal02{position:absolute;top:50px;right:-70px;width:400px;border:solid 1px #f1764b;background:#fffae4;box-shadow:2px 2px 2px rgba(0,0,0,0.1);}
+    .bookmark-modal02:after{position:absolute;top:-9px;right:136px;content:"";width:10px;height:9px;background:url("/images/common/bg_balloon02.png")/*tpa=https://www.find-job.net/images/common/bg_balloon02.png*/ no-repeat 0 0;}
+
+.contact-modal{position:absolute;top:-45px;right:-60px;width:140px;border:solid 2px #f1764b;background:#fffae4;box-shadow:2px 2px 2px rgba(0,0,0,0.1);}
+    .contact-modal:after{position:absolute;bottom:-8px;left:75px;content:"";width:10px;height:8px;background:url("/images/common/bg_balloon03.png")/*tpa=https://www.find-job.net/images/common/bg_balloon03.png*/ no-repeat 0 0;}
+
+.header-modal .btn{width:150px;}

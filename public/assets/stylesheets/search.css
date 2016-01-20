@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.box-condition{position:relative;padding-bottom:10px;}
+    .box-condition td{background-color:#fff;}
+    .box-condition ul{width:640px;}
+    .btn-furl{position:absolute;bottom:10px;right:10px;}
+    .btn-furl span.minus{display:block;padding-left:10px;background:url("/images/search/icon_close.png")/*tpa=https://www.find-job.net/images/search/icon_close.png*/ no-repeat -290px center;}
+    .btn-furl span.plus{display:block;padding-left:10px;background:url("/images/search/icon_close.png")/*tpa=https://www.find-job.net/images/search/icon_close.png*/ no-repeat 0 center;}
+
+    .list-current{}
+        .list-current dt{width:120px;}
+        .list-current dd{width:825px;}
+
+    .list-col2 li{width:333px;}
+    .list-col3 li{width:260px;}
+    .list-col4 li{width:166px;}
+    .list-col5 li{width:130px;}
+
+.box-corp-head{padding:10px 15px;}
+    .box-corp-head h2{width:820px;}
+    .box-corp-head .name{margin-top:3px;font-size:14px;display:block;color:#4d4d4d;}
+    .box-corp-head ul{margin-top:-3px;}
+
+.box-corp-body{padding:10px 15px 15px;}
+    .overview{width:766px;}
+    .overview dl dt{width:65px;padding:2px 0;color:#fff;background:#808080;}
+    .overview dl dd{width:686px;}
+    .thumbnail-search img{width:180px;}
+
+.search-modal{width:720px;background:#f2f2f2;}
+.search-modal02{width:620px;}

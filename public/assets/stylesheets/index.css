@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.col-main{width:680px;}
+.col-side{width:300px;padding-top:45px;}
+
+.form-top-search{}
+    .form-top-search .select{position:relative;width:140px;height:36px;margin:0 20px 0 0;padding:7px 10px;color:#666;background-color: #fff;overflow:visible;cursor:pointer;box-sizing:border-box;}
+    .form-top-search .select-option{position:absolute;top:45px;left:-1px;width:140px;padding:10px;color:#333;border:solid 1px #bfbfbf;background:#fcfcfc;box-shadow:2px 2px 2px rgba(0,0,0,0.1);z-index:100;}
+    .form-top-search .category{width:680px;}
+    .form-top-search .location{width:560px;}
+    .form-top-search .location li{width:140px;}
+    .form-top-search .select-option a{display:block;padding:4px 15px 4px 27px;color:#333;cursor:pointer;}
+    .form-top-search .select-option a:hover{background-color:#e8f6ff;text-decoration:none;}
+    .form-top-search .select-option .icon-check-md{background-position:5px center;}
+    .form-top-search input[type="text"]{width:300px;margin-right:20px;height:34px;line-height:34px;}
+    .form-top-search .btn{width:140px;margin:0;}
+    .form-top-search dt{width:340px;}
+
+.title-main-top{height:35px;}
+
+.box-job-wrap{margin-right:-10px;}
+    .box-job{margin-right:10px;}
+
+.box-support{}
+    .box-support h2{border-bottom:1px solid #f1764b;}
+    .box-support .arrow{float:left;width:195px;padding-right:26px;background:url("//images/top/icon_arrow.png")/*tpa=https://www.find-job.net/images/top/icon_arrow.png*/ no-repeat 203px 59px;}
+    .box-support .arrow.last{padding-right:0;}
+    .box-support .arrow p{padding-top:5px;}
+    .box-support .link-support{margin:0 -15px;}
+
+.box-member{margin-top:0;background:#fff9e9;}
+    .box-graph p{line-height:16px;}
+    .graph{width:200px;height:16px;background:#e0e0e0;}
+    .bar{height:16px;background:#52b1c0;}
+    .icon-check-md{color:#999;}
+
+.list-news{}
+    .list-news dt{width:50px;float:left;margin-right:10px;margin-bottom:5px;}
+    .list-news dd{width:240px;float:left;margin-bottom:5px;}
+
+.list-side{color:#333;}
+    .list-side .head-sub{float:right;margin-top:3px;color:#f1764b;font-weight:normal;}
+    .list-side dd.pull-left{width:190px;}
+    .list-side .link-more{margin-top:-1px;}
+
+.list-guide{}
+    .list-guide dt{width:70px;padding-top:13px;text-align:center;}
+    .list-guide dd.pull-left{width:230px;}
+
+.discription{color:#333;}

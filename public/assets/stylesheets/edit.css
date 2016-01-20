@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+table .tag-sm{margin-bottom:0;}
+
+.inner-td-col2 li{width:380px;}
+    .inner-td-col2 li.list-sm{width:240px;}
+.inner-td-col4 li{width:155px;}
+
+.inner-td-mailmagazine{}
+    .inner-td-mailmagazine dt{width:100px;}
+    .inner-td-mailmagazine .subscript{width:380px;}
+    .inner-td-mailmagazine .check{width:120px;}
+
+.table-skill{}
+    table.table-skill th{width:15%;vertical-align:middle;}
+    table.table-skill th.partition{border-left:2px solid #e6e6e6;}
+    table.table-skill td{width:7%;padding:15px 0;text-align:center;vertical-align:middle;border-left:1px solid #e6e6e6;}
+    .form .table-skill input[type="radio"]{margin:0;}
+
+.list-skill-col3{}
+    .list-skill-col3 li{width:205px;}
+
+.list-skill-col4{}
+    .list-skill-col4 li{width:135px;}
+
+.list-skill{}
+    .list-skill li{width:240px;}
+
+.box dd{margin-bottom:20px;}
+    .box dd:last-child{margin-bottom:0;}
+
+.bar-step-apply{width:100%;height:38px;background-image:url("/images/my/bg_step.png")/*tpa=https://www.find-job.net/images/my/bg_step.png*/;background-repeat:no-repeat;text-indent:-9999px;}
+    .step1{background-position:0 top;}
+    .step2{background-position:0 center;}
+    .step3{background-position:0 bottom;}
+
+.box-login{}
+    .box-login .login{width:675px;}
+    .box-login .login input[type="text"],
+    .box-login .login input[type="password"]{width:218px;margin-right:10px;}
+    .box-login .login input[type="submit"]{width:155px;}
+    .box-login .fb{width:180px;}
+
+.box-scout{}
+    .box-scout dl dt{width:25px;}
+    .box-scout dl dd{width:715px;}
+    .box-scout dl dd.head{width:140px;}
+
+.box-regist-notice{margin-left:80px;margin-right:80px;}
+.icon-regist-notice{display:inline-block;min-height:20px;padding:10px 0 10px 60px;background:url("/images/my/icon_regist_notice.png")/*tpa=https://www.find-job.net/images/my/icon_regist_notice.png*/no-repeat 0 center;}
+
+.list-similar-job{height:250px;background:#fff;overflow:auto;}
+    .list-similar-job table{margin:0;}
+    .list-similar-job table th{background:#fff;}
+
+.box-regist-info{width:292px;height:90px;padding-left:120px;background:url("/images/my/img_regist_info.png")/*tpa=https://www.find-job.net/images/my/img_regist_info.png*/ no-repeat 17px center;}
+.box-regist-scout{width:312px;height:90px;padding-left:100px;background:url("/images/my/img_regist_scout.png")/*tpa=https://www.find-job.net/images/my/img_regist_scout.png*/ no-repeat 26px center;}
