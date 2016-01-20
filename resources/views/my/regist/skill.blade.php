@@ -35,22 +35,22 @@
                 <input type=hidden name=skill_sid value="d7e31f76463b838afeb75af2953be675">
                 <input type=hidden name=rireki_sid value="0826f0b72710d2f8b7fee0f39585aa0a">
                 <section>
-                    <h2 class="h2 text-em mb10">オフィス</h2>
+                    <h2 class="h2 text-em mb10">办公自动化</h2>
                     <table class="table-skill input-cell text-md mb40">
                         <thead>
                         <tr>
                             <th>&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                             <th class="partition">&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -121,22 +121,22 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">デザイン</h2>
+                    <h2 class="h2 text-em mb10">设计</h2>
                     <table class="table-skill input-cell text-md mb40">
                         <thead>
                         <tr>
                             <th>&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                             <th class="partition">&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -357,22 +357,22 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">OS</h2>
+                    <h2 class="h2 text-em mb10">操作系统</h2>
                     <table class="table-skill input-cell text-md mb40">
                         <thead>
                         <tr>
                             <th>&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                             <th class="partition">&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -462,22 +462,22 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">プログラミング</h2>
+                    <h2 class="h2 text-em mb10">程序设计</h2>
                     <table class="table-skill input-cell text-md mb40">
                         <thead>
                         <tr>
                             <th>&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                             <th class="partition">&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -728,22 +728,22 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">データベース</h2>
+                    <h2 class="h2 text-em mb10">数据库</h2>
                     <table class="table-skill input-cell text-md mb40">
                         <thead>
                         <tr>
                             <th>&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                             <th class="partition">&nbsp;</th>
-                            <td>なし</td>
-                            <td>独学</td>
-                            <td>実務<br>~1年</td>
-                            <td>実務<br>1~2年</td>
-                            <td>実務<br>2年~</td>
+                            <td>无</td>
+                            <td>自学</td>
+                            <td>实务<br>~1年</td>
+                            <td>实务<br>1~2年</td>
+                            <td>实务<br>2年~</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -833,7 +833,7 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">各種資格</h2>
+                    <h2 class="h2 text-em mb10">证书资格</h2>
                     <table class="input-cell text-md mb40">
                         <tr>
                             <th>TOEIC</th>
@@ -937,7 +937,7 @@
                 </section>
 
                 <section>
-                    <h2 class="h2 text-em mb10">スキルに関する捕足</h2>
+                    <h2 class="h2 text-em mb10">关于技能的补充</h2>
                     <div class="box-md bg-default border-t-gray border-b-gray mb50">
                         <textarea placeholder="上記以外にあなたのスキルについてアピールしたいことがあればご記入ください" tabindex=""
                                   name="s_other"></textarea>
