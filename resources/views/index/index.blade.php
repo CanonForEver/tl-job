@@ -107,7 +107,7 @@
                             <span class="link link-arrow03-xs"></span>
                             <ul class="fj-dropdown-menu select-option location text-md hidden"
                                 aria-labelledby="dropdownKinmuchi">
-                                @foreach($kinmuchies as $kinmuchi)
+                                @foreach($kinmuchis as $kinmuchi)
                                     <li class="pull-left">
                                         <a class="fj-top-search-checkbox" href="http://www.find-job.net/#">{{$kinmuchi->name}}</a>
                                         <input class="hidden" type="checkbox" name="kinmuchi" value="{{$kinmuchi->id}}">
@@ -121,7 +121,7 @@
                         <div id="dropdownKeitai" class="fj-dropdown-toggle select pull-left">
                             <span class="link link-arrow03-xs"></span>
                             <ul class="fj-dropdown-menu select-option text-md hidden" aria-labelledby="dropdownKeitai">
-                                @foreach($keitaies as $keitai)
+                                @foreach($keitais as $keitai)
                                 <li>
                                     <a class="fj-top-search-checkbox" href="http://www.find-job.net/#">{{$keitai->name}}</a>
                                     <input class="hidden" type="checkbox" name="keitai" value="{{$keitai->id}}">
