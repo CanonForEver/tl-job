@@ -28,7 +28,7 @@
 
 
 
-
+//
 Route::group(['middleware' => ['web']], function () {
 
     Route::post('/api/my', 'ApiController@my');
