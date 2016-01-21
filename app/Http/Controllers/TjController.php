@@ -8,7 +8,7 @@ use App\Http\Requests;
 class TjController extends Controller
 {
 
-    //职位搜索
+    //职位搜索123
     function search(Request $request)
     {
 //        dump($request->all());
