@@ -18,8 +18,7 @@ class RegistController extends Controller
         $this->messages = $this->messages();
     }
 
-    //验证错误信息,还需要进一步调整
-    //该验证的都要验证
+    //验证错误信息
     private function messages()
     {
         return [
