@@ -20,6 +20,7 @@ class EditController extends Controller
 
 
     //相同路由，不同函数，各种编辑...!!!
+    //功能试验
     function edit(Request $request)
     {
         dump($request->all());
