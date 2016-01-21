@@ -28,6 +28,7 @@ class Controller extends BaseController
         // 工作地点
         $kinmuchis = Cache::rememberForever('kinmuchis', function () {
             return DB::table('kinmuchis')->get();
+            
         });
 
         // 雇用方式

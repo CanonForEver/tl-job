@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Models\User;
+
 class EditController extends Controller
 {
     //登录后,用户主页
     function index()
     {
+
+
         return view('my.edit.edit');
     }
 
