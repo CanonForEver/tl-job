@@ -12,7 +12,9 @@ class TjController extends Controller
     function search(Request $request)
     {
 //        dump($request->all());
+        return 123;
         return view('tj.search');
+
     }
 
     //最新职位
