@@ -70,7 +70,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::group(['prefix' => 'edit'], function () {
             Route::get('edit', 'EditController@index');                             // 登录后,用户主页
-            Route::post('edit', 'EditController@edit');                             // 各种编辑...!!!
+            Route::put('edit', 'EditController@edit');                             // 各种编辑...!!!
 
             Route::get('edit_name', 'EditController@edit_name');                    // 编辑用户信息
             Route::post('change_passwd', 'EditController@change_passwd');           // 修改密码

@@ -22,13 +22,17 @@
         <p class="mb40">以下のフォームに必要事項をご記入の上、『登録内容を変更する』ボタンを押してください。 <br>
         ※ <img src="/images/edit/icon_lock.png" alt="非公開" class="mr5">マークのついている情報は企業には公開されません。</p>
 
-        <form class="form" name="edit" action="/images/edit/edit_name.html" method="post">
-        <input type="hidden" value="1" name="submitted">
+        <form class="form" name="edit" action="/my/edit/edit" method="post">
+            {!! csrf_field() !!}
+            {!! method_field('put') !!}
+        <input type="hidden" value="edit_name" name="submitted">
         <input type="hidden" value="mail" name="frm">
         <input type="hidden" name="mid">
         <input type="hidden" name="from">
         <input type="hidden" name="userid">
         <input type="hidden" name="unique_key" value="742f52987b4c3dd35e8e2480a204ef5f">
+
+        <input type="hidden" name="id" value="{{$user->id}}">
 
             <section>
                 <h2 class="h2 text-em mb10">プロフィール</h2>
@@ -39,12 +43,12 @@
                             <dl class="td-inner-sm mb10 clearfix">
                                 <dt class="pull-left">漢字</dt>
                                 <dd class="pull-left">
-                                    <input type="text" value="山田" class=" text-md " name="name">
+                                    <input type="text" value="{{$user->name}}" class=" text-md " name="name">
                                 </dd>
                             </dl>
                             <dl class="td-inner-sm clearfix">
                                 <dt class="pull-left">カナ</dt>
-                                <dd class="pull-left"><input type="text" value="てください" class=" text-md " name="kana"></dd>
+                                <dd class="pull-left"><input type="text" value="{{$user->kana}}" class=" text-md " name="kana"></dd>
                             </dl>
                             
                         </td>
@@ -52,9 +56,9 @@
                     <tr>
                         <th>性別<img src="/images/edit/icon_lock.png" alt="非公開" class="ml5"><span class="tag tag-xsm tag-primary pull-right">必須</span></th>
                         <td>
-                            
-                                男性<input name="sex" type="hidden" value="1">
-                            
+                             {{--<input name="sex" type="hidden" value="{{$user->sex}}">--}}
+                             <input type="radio" name="sex" value="1" @if($user->sex == 1) checked @endif>男性
+                             <input type="radio" name="sex" value="2" @if($user->sex == 2) checked @endif>女性
                         </td>
                     </tr>
                     <tr>
@@ -63,14 +67,14 @@
                             <dl class="td-inner-md mb10 clearfix">
                                 <dt class="pull-left">半角英数記号</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="email" value="canonpd@163.com" class=" text-md ">
+                                    <input type="text" name="email" value="{{$user->email}}" class=" text-md ">
                                 </dd>
                                 
                             </dl>
                             <dl class="td-inner-md clearfix">
                                 <dt class="pull-left">確認用</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="email2" value="canonpd@163.com" class=" text-md ">
+                                    <input type="text" name="email2" value="{{$user->email}}" class=" text-md ">
                                 </dd>
                                 
                             </dl>
@@ -82,11 +86,11 @@
                             <dl class="td-inner-md mb10 clearfix">
                                 <dt class="pull-left">半角英数記号</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="m_email" value="" class="form-md  text-md pull-left">
+                                    <input type="text" name="m_email" value="{{$user->m_email}}" class="form-md  text-md pull-left">
                                     <div class="mt5 ml10 mr10 pull-left">@</div>
                                     <div class="select form-sm pull-left">
                                         <select name="m_domain" class="">
-                                            <option value="0">---</option>
+                                            <option value="{{$user->m_domain}}">---</option>
                                             
                                             <option value="docomo.ne.jp">docomo.ne.jp</option>
                                             

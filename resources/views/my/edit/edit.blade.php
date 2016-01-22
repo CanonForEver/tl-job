@@ -33,15 +33,21 @@
                             <tbody>
                             <tr>
                                 <th>姓名</th>
-                                <td>山田</td>
+                                <td>{{$user->name}}</td>
                             </tr>
                             <tr>
                                 <th>性別</th>
-                                <td>男性</td>
+                                <td>
+                                    @if($user->sex == 1)
+                                        男性
+                                    @elseif($user->sex == 2)
+                                        女性
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th>电子邮件</th>
-                                <td>canonpd@163.com</td>
+                                <td>{{$user->email}}</td>
                             </tr>
 
                             <tr>
@@ -97,15 +103,27 @@
                             <tbody>
                             <tr>
                                 <th>希望職種</th>
-                                <td>Webデザイナー・HTMLコーダー</td>
+                                <td>
+                                    @foreach($shokushus as $shokushu)
+                                        {{$shokushu['shokushu']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>希望勤務地</th>
-                                <td>東京23区、東京23区外</td>
+                                <td>
+                                    @foreach($kinmuchis as $kinmuchi)
+                                        {{$kinmuchi['kinmuchi']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>希望雇用形態</th>
-                                <td>正社員(中途)</td>
+                                <td>
+                                    @foreach($keitais as $keitai)
+                                        {{$keitai['keitai']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>新着求人情報</th>
@@ -125,7 +143,13 @@
                             </tr>
                             <tr>
                                 <th>メールの配信形式</th>
-                                <td>HTML形式</td>
+                                <td>
+                                    @if($user->html_mail == 1)
+                                        HTML形式
+                                    @elseif($user->html_mail == 2)
+                                        Mail形式
+                                    @endif
+                                </td>
                             </tr>
                             </tbody>
                         </table>

@@ -7,15 +7,41 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Models\User;
+use App\Models\User_shokushu;
+use App\Models\Shokushu;
+use App\Models\User_kinmuchi;
+use App\Models\Kinmuchi;
 
 class EditController extends Controller
 {
+    private $user;
     //登录后,用户主页
-    function index()
+    public function __construct()
     {
 
+        if(!session()->has('user')) {
+            $user = User::find(5);
+            session(['user' => $user]);
+        }else{
+            $this->user = session('user');
+        }
 
-        return view('my.edit.edit');
+        view()->share(['user' =>session('user')]);
+//        dump(session('user'));
+}
+    function index()
+    {
+        $user_shokushus = User::with('user_shokushus.shokushu')->find($this->user['id']);
+        $shokushus = $user_shokushus['user_shokushus'];
+        $user_kinmuchi = User::with('user_kinmuchis.kinmuchi')->find($this->user['id']);
+//                return($user_kinmuchi);
+        $kinmuchis = $user_kinmuchi['user_kinmuchis'];
+        $user_keitais = User::with('user_keitais.keitai')->find($this->user['id']);
+        $keitais = $user_keitais['user_keitais'];
+//        return ($keitais);
+
+
+        return view('my.edit.edit',['shokushus' => $shokushus,'kinmuchis' => $kinmuchis,'keitais' => $keitais]);
     }
 
 
@@ -23,9 +49,11 @@ class EditController extends Controller
     //功能试验
     function edit(Request $request)
     {
-        dump($request->all());
+//        dump($request->all());
         switch ($request->submitted) {
-            case 'form':
+            case 'edit_name':
+                return $this->update_edit_name($request);
+                break;
             case 'career':                   //编辑各种信息列表
                 return $this->career();
                 break;
@@ -72,6 +100,16 @@ class EditController extends Controller
         return view('my.edit.edit_name');
     }
 
+    function update_edit_name($request)
+    {
+//        return ($request);
+        $user = User::find($this->user['id']);
+//        $data = array_add($request->except('id'));
+        $data = $request->only('name','kana','sex','email','m_email','m_domain');
+//        return ($data);
+        $user->update($data);
+        return  redirect("/my/edit/edit");
+    }
 
     //修改密码
     function change_passwd(Request $request)
