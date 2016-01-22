@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\User, App\Models\User_shokushu, App\Models\User_kinmuchi;
+use Validator;
 
 class RegistController extends Controller
 {
@@ -16,6 +17,11 @@ class RegistController extends Controller
     {
         parent::__construct();
         $this->messages = $this->messages();
+
+        //如果用户信息已经存入session,那么发送到模板
+        if (session()->has('user')) {
+            view()->share(['user' => session('user')]);
+        }
     }
 
     //验证错误信息
@@ -24,7 +30,10 @@ class RegistController extends Controller
         return [
             'email.required' => '邮箱不能为空！',
             'email.unique' => '邮箱已经存在!',
-            'passwd.required' => '密码不能为空！'
+            'passwd.required' => '密码不能为空！',
+            'k_shokushu.required' => '至少选择一个希望的职位',
+            'k_kinmuchi.required' => '至少选择一个希望的工作地点',
+            'k_keitai.required' => '至少选择一个希望的雇佣形式',
         ];
     }
 
@@ -33,93 +42,81 @@ class RegistController extends Controller
     {
         return view('my.regist.regist');
     }
-//    function test(Request $request)
-//    {
-//        dump($request->all());
-//    }
 
-    function regist(Request $request)
+    function index_store(Request $request)
     {
-        dump($request->all());
-        switch ($request->submitted) {
-            case 'mailmaga':                   //希望条件
-                return $this->mailmaga($request);
-                break;
-            case 'bookmark':                    //推荐关注企业
-                return $this->bookmark($request);
-                break;
-            case 'rireki':                      //履历书
-                return $this->rireki($request);
-                break;
-        }
-    }
-
-
-    function regist2(Request $request)
-    {
-        dump($request->all());
-        switch ($request->submitted) {
-            case 'form':                    //回退到履历书
-                return $this->rireki($request);
-                break;
-            case 'skill':                   //职业技能
-                return $this->skill($request);
-                break;
-            case 'rireki_add':                   //增加职务经历
-                return $this->rireki_add($request);
-                break;
-            case 'data_regist':                   //注册完成
-                return $this->data_regist($request);
-                break;
-        }
-    }
-
-
-    //2.希望工作
-    function mailmaga($request)
-    {
-//        $this->validate($request, [
-//            'email' => 'required|unique:users|max:255',
-//            'passwd' => 'required',
-//        ], $this->messages);
+        $this->validate($request, [
+            'email' => 'required|unique:users|max:255',
+            'passwd' => 'required',
+        ], $this->messages);
 //
-//        //创建新用户
+        //创建新用户
 //        $user = User::create([
 //            'email' => $request->email,
 //            'password' => bcrypt($request->passwd)
 //        ]);
-        $user=User::find(5);
-
-        //加载希望条件页面
-        return view('my.regist.mailmaga', ['user' => $user]);
+        $user = User::find(5);
+        session(["user" => $user]);
+        return redirect('/my/regist/mailmaga');
     }
+
+
+    //2.希望工作
+    function mailmaga()
+    {
+        //加载希望条件页面
+        return view('my.regist.mailmaga');
+    }
+
+
+    function mailmaga_store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'k_shokushu' => 'required',
+            'k_kinmuchi' => 'required',
+            'k_keitai' => 'required',
+        ], $this->messages);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+
+        // 生成新的希望数据
+        $user_id = session("user")->id;                         //当前用户的id
+        $hopes = [
+            'shokushu' => $request->k_shokushu,         //希望职位
+            'kinmuchi' => $request->k_kinmuchi,         //希望工作地点
+            'keitai' => $request->k_keitai,             //希望雇佣方式
+        ];
+
+        foreach ($hopes as $key => $value) {
+            $data = [];
+            $model = "App\\Models\\User_" . $key;               //需要调用的模型
+            $model::where("user_id", $user_id)->delete();       //删除原始数据
+
+            foreach ($value as $v) {                            //插入新数据
+                $data["user_id"] = $user_id;
+                $data[$key . '_id'] = $v;
+                $model::create($data);
+            }
+        }
+
+
+        //希望的薪酬
+
+
+        return redirect('/my/regist/bookmark');
+
+    }
+
 
     //2.推荐关注企业
     function bookmark()
     {
-//        ["submitted" => "bookmark"
-//  "userid" => "5"
-//  "mailservice_new" => "1"
-//  "mailservice_pickup" => "1"
-//  "mailservice_digest" => "1"
-//  "mailservice_dm" => "1"
-//  "_token" => "v0YQpn6XaeFsrhnhGbJahRdF7DSu051CbFLDbYLA"
-//        "k_shokushu" => array:2 [▼            职位
-//    0 => "203"
-//    1 => "204"
-//  ]
-        //  "k_kinmuchi" => "9"             //地区
-//  "k_keitai" => "2"                       //雇佣形式
-//  "k_jikyuu" => "4"                       //时薪
-//  "k_gekkyuu" => "3"                      //月薪
-//  "k_nenbou" => "4"                       //年薪
-//  "html_mail" => "1"                      //html邮件
-//]
-//
-
-
         return view('my.regist.bookmark');
     }
+
 
     function rireki()
     {

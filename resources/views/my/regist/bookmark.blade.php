@@ -7,7 +7,7 @@
 <div id="topic-path" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
     <ul>
         <li><a href="/" itemprop="url"><span itemprop="title">転職・求人情報</span></a></li>
-        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong><span itemprop="title">会員登録</span></strong></li>
+        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong><span itemprop="title">会员注册</span></strong></li>
     </ul>
 </div><!--topic-path-->
 @stop
@@ -16,7 +16,7 @@
 <main>
     <div class="container container-narrow">
 
-        <h1 class="mb30">会員登録</h1>
+        <h1 class="mb30">会员注册</h1>
 
         <div class="box box-md mb40">
             <p><span class="text-em text-lg text-bold">気になる求人があれば、まず検討中に追加しましょう。</span></p>

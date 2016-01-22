@@ -63,10 +63,32 @@ Route::group(['middleware' => ['web']], function () {
     //用户中心
     Route::group(['namespace' => 'My', 'prefix' => 'my'], function () {
 
-        //注册流程
-        Route::get('regist/regist', 'RegistController@index');                      // 显示注册页面
-        Route::post('regist/regist', 'RegistController@regist');                    // 各种注册
-        Route::post('regist/regist2', 'RegistController@regist2');                  // 各种注册2
+        Route::group([ 'prefix' => 'regist'], function () {
+            //注册流程
+            Route::get('regist', 'RegistController@index');                      // 显示注册页面
+            Route::post('regist', 'RegistController@index_store');                // 显示注册页面
+
+            Route::get('mailmaga', 'RegistController@mailmaga');                 // 希望条件
+            Route::post('mailmaga', 'RegistController@mailmaga_store');          // 希望条件
+
+            Route::get('bookmark', 'RegistController@bookmark');                 // 推荐关注企业
+            Route::get('rireki', 'RegistController@rireki');                     // 履历书
+            Route::get('skill', 'RegistController@skill');                       // 职业技能
+            Route::get('rireki_add', 'RegistController@rireki_add');             // 增加职务经历
+            Route::get('data_regist', 'RegistController@data_regist');           // 注册完成
+        });
+
+
+
+
+
+
+
+
+
+
+
+
 
         Route::group(['prefix' => 'edit'], function () {
             Route::get('edit', 'EditController@index');                             // 登录后,用户主页
