@@ -9,6 +9,7 @@ class User_shokushu extends Model
     //
     public $timestamps = false;
 
-    protected $guarded = [];
-
+    protected $fillable = [
+        'user_id', 'shokushu_id',
+    ];
 }

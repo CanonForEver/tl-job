@@ -1,14 +1,14 @@
 <?php
 
-namespace App\models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User_kinmuchi extends Model
+class Bookmark extends Model
 {
-    //
     public $timestamps = false;
     protected $fillable = [
-        'user_id', 'kinmuchi_id',
+        'user_id', 'job_id',
     ];
+
 }

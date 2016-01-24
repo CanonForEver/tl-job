@@ -23,11 +23,11 @@
             <p>求人を気になるリストに追加すると企業に伝わるため、企業からアプローチを受ける可能性が高まります。<br>応募前に企業からの反応がわかるため、合格の可能性が高い求人を見つけることが可能です。<br>転職活動を有利に進めるためにも、気になった求人はどんどん追加しましょう。</p>
         </div>
 
-        <form action="regist" method="post" class="form">
+        <form method="post" class="form">
             <input type="hidden" name="submitted" value="rireki">
             <div class="text-center mb40 relative">
-                <button onclick="$('form input[name=job_id]').prop('checked', true); $('form').submit(); return false;" class="btn btn-xxlg btn-primary btn-wide block-center">すべて追加して次へ</button>
-                <a href="#" onclick="$('form input[name=job_id]').prop('checked', false); $('form').submit(); return false;" class="icon icon-arrow02-xs fixed-right">追加しない場合はこちら</a>
+                <button onclick="$('form input[name=job_id\\[\\]]').prop('checked', true); $('form').submit(); return false;" class="btn btn-xxlg btn-primary btn-wide block-center">下面的全部关注</button>
+                <a href="#" onclick="$('form input[name=job_id\\[\\]]').prop('checked', false); $('form').submit(); return false;" class="icon icon-arrow02-xs fixed-right">追加しない場合はこちら</a>
             </div>
             <table>
                 <colgroup>
@@ -40,10 +40,10 @@
                 <tbody>
                 <tr>
                     <th class="text-center">追加</th>
-                    <th>職種/社名</th>
+                    <th>职位/公司名</th>
                     <th>待遇</th>
-                    <th>仕事の概要</th>
-                    <th>勤務地</th>
+                    <th>工作概要</th>
+                    <th>工作地</th>
                 </tr>
 
                 <tr>

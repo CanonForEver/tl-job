@@ -27,7 +27,6 @@
 */
 
 
-
 //
 Route::group(['middleware' => ['web']], function () {
 
@@ -36,7 +35,7 @@ Route::group(['middleware' => ['web']], function () {
     // 首页
     Route::get('/', 'IndexController@index');
     Route::get('login', 'IndexController@login');                        //登录
-    Route::post('login', 'IndexController@check_login');                        //登录
+    Route::post('login', 'IndexController@check_login');                 //登录
 
     Route::get('logout', 'IndexController@logout');                      //登出
 
@@ -63,31 +62,28 @@ Route::group(['middleware' => ['web']], function () {
     //用户中心
     Route::group(['namespace' => 'My', 'prefix' => 'my'], function () {
 
-        Route::group([ 'prefix' => 'regist'], function () {
+        Route::group(['prefix' => 'regist'], function () {
             //注册流程
-            Route::get('regist', 'RegistController@index');                      // 显示注册页面
+            Route::get('regist', 'RegistController@index');                       // 显示注册页面
             Route::post('regist', 'RegistController@index_store');                // 显示注册页面
 
             Route::get('mailmaga', 'RegistController@mailmaga');                 // 希望条件
             Route::post('mailmaga', 'RegistController@mailmaga_store');          // 希望条件
 
             Route::get('bookmark', 'RegistController@bookmark');                 // 推荐关注企业
+            Route::post('bookmark', 'RegistController@bookmark_store');          // 推荐关注企业
+
             Route::get('rireki', 'RegistController@rireki');                     // 履历书
+            Route::post('rireki', 'RegistController@rireki_store');              // 履历书
+
             Route::get('skill', 'RegistController@skill');                       // 职业技能
+            Route::post('skill', 'RegistController@skill_store');                // 职业技能
+
             Route::get('rireki_add', 'RegistController@rireki_add');             // 增加职务经历
+            Route::post('rireki_add', 'RegistController@rireki_add_store');      // 增加职务经历
+
             Route::get('data_regist', 'RegistController@data_regist');           // 注册完成
         });
-
-
-
-
-
-
-
-
-
-
-
 
 
         Route::group(['prefix' => 'edit'], function () {

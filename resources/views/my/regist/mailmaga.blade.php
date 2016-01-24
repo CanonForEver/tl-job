@@ -14,18 +14,15 @@
 @stop
 
 @section('container')
-
     <main>
         <div class="container container-narrow">
 
             <h1 class="mb30">会员注册</h1>
 
-
             <div class="box box-md mb40">
                 <p><span class="text-em text-lg text-bold">会员注册が完了しました。</span><br>ご登録いただいたメールアドレスに、登録完了のお知らせメールを送信しました。
                 </p>
             </div>
-
 
             <div class="box box-md bg-yellow clearfix mb40">
                 <h2 class="text-xlg text-em mb5">詳細情報をご登録いただくと利用できる便利な機能！</h2>
@@ -176,27 +173,29 @@
                     </table>
                 </section>
 
-
                 <table class="input-cell mb50">
                     <tbody>
                     <tr>
                         <th>メールの配信形式<span class="tag tag-sm tag-primary pull-right">必須</span></th>
                         <td>
                             <ul>
-                                <li class="mb5"><label for="html_mail_yes">
+                                <li class="mb5">
+                                    <label for="html_mail_yes">
                                         <input type="radio" id="html_mail_yes" name="html_mail"
-                                               @if(!(old('html_mail') or old('html_mail')=='1'))
+                                               @if(!old('html_mail') or old('html_mail')=='1')
                                                checked
                                                @endif
                                                value="1">HTML形式
-                                    </label></li>
+                                    </label>
+                                </li>
                                 <li><label for="html_mail_no">
                                         <input type="radio" id="html_mail_no" name="html_mail"
                                                @if(old('html_mail')=='0'))
                                                checked
                                                @endif
                                                value="0">テキスト形式
-                                    </label></li>
+                                    </label>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -212,16 +211,12 @@
     </main>
 @stop
 @section('js')
-
-
     <script src="/assets/javascripts/my/fj.js"></script>
     <script src="/assets/javascripts/my/jquery-fjplugins.js"></script>
     <script src="/assets/javascripts/my/my.js"></script>
     <script>
         $(function () {
-
             fj.c.my.regist.initMailmagaForm({form: "form"});
-
         });
     </script>
 @stop
