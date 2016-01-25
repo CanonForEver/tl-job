@@ -24,4 +24,14 @@ class User extends Model
     {
         return $this->hasMany('App\Models\User_keitai');
     }
+
+    public function procince()
+    {
+        return $this->belongsTo('App\Models\Province','ken');
+    }
+
+    public function user_skill()
+    {
+        return $this->hasMany('App\Models\User_skill');
+    }
 }

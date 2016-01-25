@@ -22,15 +22,15 @@
         <p class="mb40">以下のフォームに必要事項をご記入の上、『登録内容を変更する』ボタンを押してください。 <br>
         ※ <img src="/images/edit/icon_lock.png" alt="非公開" class="mr5">マークのついている情報は企業には公開されません。</p>
 
-        <form class="form" name="edit" action="/my/edit/edit" method="post">
+        <form class="form" name="edit" action="/my/edit/update_edit_name" method="post">
             {!! csrf_field() !!}
             {!! method_field('put') !!}
-        <input type="hidden" value="edit_name" name="submitted">
-        <input type="hidden" value="mail" name="frm">
-        <input type="hidden" name="mid">
-        <input type="hidden" name="from">
-        <input type="hidden" name="userid">
-        <input type="hidden" name="unique_key" value="742f52987b4c3dd35e8e2480a204ef5f">
+        {{--<input type="hidden" value="edit_name" name="submitted">--}}
+        {{--<input type="hidden" value="mail" name="frm">--}}
+        {{--<input type="hidden" name="mid">--}}
+        {{--<input type="hidden" name="from">--}}
+        {{--<input type="hidden" name="userid">--}}
+        {{--<input type="hidden" name="unique_key" value="742f52987b4c3dd35e8e2480a204ef5f">--}}
 
         <input type="hidden" name="id" value="{{$user->id}}">
 

@@ -71,7 +71,8 @@
                         <p class="pull-left mt5">※ Web简历，招聘企业阅览的事能的你的履历书。 <br>
                             选拔接受邮件设定和招聘企业Web简历公开。</p>
 
-                        <a href="javascript:void(0);" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>
+                        {{--<a href="javascript:void(0);" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>--}}
+                        <a href="/my/edit/edit_resume" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>
 
                         <a href="/my/show_resume" target="_blank"
                            class="btn btn-md btn-secondary pull-right pl15 pr15">Web简历书确认</a>

@@ -70,9 +70,15 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::group(['prefix' => 'edit'], function () {
             Route::get('edit', 'EditController@index');                             // 登录后,用户主页
-            Route::put('edit', 'EditController@edit');                             // 各种编辑...!!!
 
             Route::get('edit_name', 'EditController@edit_name');                    // 编辑用户信息
+            Route::put('update_edit_name', 'EditController@update_edit_name');    //更新用户信息
+
+            Route::get('edit_resume', 'EditController@edit_resume');                  //编辑用户履历
+            Route::put('update_resume', 'EditController@update_resume');              //更新用户履历
+            Route::get('edit_skill', 'EditController@edit_skill');                    // 编辑用户信息
+
+
             Route::post('change_passwd', 'EditController@change_passwd');           // 修改密码
             Route::get('edit_scout', 'EditController@edit_scout');                  // 邮件通知
         });
