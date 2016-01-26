@@ -75,8 +75,11 @@ Route::group(['middleware' => ['web']], function () {
             Route::put('update_edit_name', 'EditController@update_edit_name');    //更新用户信息
 
             Route::get('edit_resume', 'EditController@edit_resume');                  //编辑用户履历
-            Route::get('add_resume', 'EditController@add_resume');                  //追加用户履历
             Route::put('update_resume', 'EditController@update_resume');              //更新用户履历
+            Route::get('add_resume', 'EditController@add_resume');                  //追加用户履历
+            Route::post('store_add_resume', 'EditController@store_add_resume');    //存储追加履历
+            Route::delete('/{resume_id}/delete_resume', 'EditController@delete_resume');     //删除履历
+
 
             Route::get('edit_skill', 'EditController@edit_skill');                    // 编辑用户信息
             Route::put('update_skill', 'EditController@update_skill');                    // 编辑用户信息

@@ -154,9 +154,24 @@ class EditController extends Controller
     //追加履历
     public function add_resume()
     {
-        return view('my.edit.resume_add');
+        $shokushus = Shokushu::orderby('sort_order','asc')->get();
+        $keitais = Keitai::orderby('sort_order','asc')->get();
+        return view('my.edit.resume_add',['shokushus' => $shokushus,'keitais' => $keitais]);
     }
 
+    //存储追加履历
+    public function store_add_resume(Request $request)
+    {
+//        return $request->all();
+        Resume::create($request->all());
+        return redirect('/my/edit/edit_resume');
+    }
+
+    public function delete_resume($resume_id)
+    {
+        Resume::where('id',$resume_id)->delete();
+        return redirect('/my/edit/edit_resume');
+    }
     //修改密码
     function change_passwd(Request $request)
     {

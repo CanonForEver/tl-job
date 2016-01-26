@@ -309,7 +309,10 @@
                     <div class="box-md clearfix">
                         <div class="clearfix mb10">
                             <h3 class="h3 pull-left">職務経歴{{$k + 1}}</h3>
-                            <a href="#" data-role="submit-button" data-submit-type="rireki_delete" data-submit-num="1"  data-num="1" class="_deleteRireki btn btn-md btn-default pull-right">削除</a>
+                            {{--<a href=""  class="_deleteRireki btn btn-md btn-default pull-right">削除</a>--}}
+                            <a class="_deleteRireki btn btn-md btn-default pull-right" href="/my/edit/{{$resume['id']}}/delete_resume" data-method="delete" data-token="{{csrf_token()}}" data-confirm="确定删除吗？">
+                                <span class="am-icon-trash-o"></span> 删除
+                            </a>
                         </div>
                         <table class="input-cell">
                             <tr>
