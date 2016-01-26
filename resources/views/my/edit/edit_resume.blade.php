@@ -248,10 +248,10 @@
                                     <div class="select form-sm pull-left">
                                         <select tabindex="124" class="form_g_type" name="g_type">
                                             <option value="0">----</option>
-                                            <option value=1 selected>入学
-                                            <option value=2>中退
-                                            <option value=3>卒業
-                                            <option value=4>卒業見込み
+                                            <option value=1 @if($user->g_type == 1) selected="selected"  @endif>入学
+                                            <option value=2 @if($user->g_type == 2) selected="selected"  @endif>中退
+                                            <option value=3 @if($user->g_type == 3) selected="selected"  @endif>卒業
+                                            <option value=4 @if($user->g_type == 4) selected="selected"  @endif>卒業見込み
 
                                         </select>
                                     </div>
@@ -275,7 +275,15 @@
                         <td>
                             @foreach($skill_category['skill'] as $skill)
                             @if(!$skill->user_skills->isEmpty())
-                            <span >{{$skill['name']}}</span> ：独学<br>
+                                @foreach($skill->user_skills as $user_skill)
+                                <span >{{$skill['name']}}</span> ：
+                                @if($user_skill->value == 1)独学
+                                @elseif($user_skill->value == 2)実務~1年
+                                @elseif($user_skill->value == 3)実務1~2年
+                                @elseif($user_skill->value == 4)実務2~年
+                                @endif
+                             <br>
+                              @endforeach
                             @endif
                             @endforeach
                         </td>
@@ -284,7 +292,7 @@
 
                     <tr>
                         <th>スキル補足</th>
-                        <td>随便&#35828;的&#21861;</td>
+                        <td>{{$user->s_other}}</td>
                     </tr>
 
                 </table>
@@ -396,6 +404,9 @@
                     </div><!--box-md-->
 
                     @endforeach
+
+                        <a href="/my/edit/add_resume"  class="btn btn-md btn-secondary pull-right mr20 mb20">職務経歴追加</a>
+                        <p class="pull-right pt5 mr20">※上記のほかに勤務した会社があれば追加してください</p>
 
                 </div>
 

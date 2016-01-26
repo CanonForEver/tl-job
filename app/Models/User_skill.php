@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_skill extends Model
 {
+    public $timestamps = false;
     protected $guarded = [];
 
     public function skill()

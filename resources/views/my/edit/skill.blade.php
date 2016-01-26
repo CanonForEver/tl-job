@@ -26,17 +26,9 @@
             </div>
         </section>
 
-        <form name=skill action="edit" method=post class="form">
-            <input type="hidden" name="submitted" value="skill_form">
-            <input type="hidden" name="from" value="">
-            <input type="hidden" name="userid" value="557782">
-            <input type="hidden" name="user_sid" value="1223dfa5f00868373e5431180001062c">
-            <input type="hidden" name="skill_sid" value="370b9bcbf7604e2b4b4e0b29be7599b2">
-            <input type="hidden" name="rireki_sid" value="41af19592e54fde661b472b6225f0c14">
-            <input type="hidden" name="career" value="1">
-            <input type="hidden" name="old_rireki" value="">
-            <input type="hidden" name="edit_form" value="0">
-            <input type="hidden" name="unique_key" value="9e908efd87c839e8235d5b9da36c308f">
+        <form name=skill action="/my/edit/update_skill" method=post class="form">
+            {!! csrf_field() !!}
+            {!! method_field('put') !!}
 
             <section>
                 @foreach($skill_categories as $skill_category)
@@ -67,15 +59,30 @@
                         <th>{{$skill['name']}}</th>
 
                         {{--<td><input type="radio"  name="{{$skill['id']}}" value="0" @if(in_array($skill['id'], $user_skills) and $skill['value']==0) checked @endif></td>--}}
-                        <td><input type="radio"  name="{{$skill['id']}}" value="0" checked></td>
 
-                        <td><input type="radio"  name="{{$skill['id']}}" value="1" ></td>
+                        {{--<td><input type="radio"  name="{{$skill['id']}}" value="0" checked></td>--}}
 
-                        <td><input type="radio"  name="{{$skill['id']}}" value="2" ></td>
+                        {{--<td><input type="radio"  name="{{$skill['id']}}" value="1" ></td>--}}
 
-                        <td><input type="radio"  name="{{$skill['id']}}" value="3" ></td>
+                        {{--<td><input type="radio"  name="{{$skill['id']}}" value="2" ></td>--}}
 
-                        <td><input type="radio"  name="{{$skill['id']}}" value="4" ></td>
+                        {{--<td><input type="radio"  name="{{$skill['id']}}" value="3" ></td>--}}
+
+                        {{--<td><input type="radio"  name="{{$skill['id']}}" value="4" ></td>--}}
+
+                        @for($i=0;$i<=4; $i++)
+                            <td>
+                                <input type="radio" tabindex="10" name="{{$skill->id}}" value="{{$i}}"
+                                       @if(!array_key_exists("$skill->id",$my_skills) and $i==0)
+                                       checked
+                                       @endif
+
+                                       @if(array_key_exists("$skill->id",$my_skills) and $i == $my_skills["$skill->id"])
+                                       checked
+                                        @endif
+                                        >
+                            </td>
+                        @endfor
 
                     @if($k+1 % 2 == 0)
                         <tr>
@@ -89,97 +96,10 @@
             </section>
 
 
-
-            <section>
-                <h2 class="h2 text-em mb10">各種資格</h2>
-                <table class="input-cell text-md mb40">
-                    <tr>
-                        <th>TOEIC</th>
-                        <td>
-                            <ul class="list-skill-col4 clearfix">
-
-
-                                <li class="pull-left"><label for="64"><input tabindex="17" class="mr5" id="64" name="64" type="checkbox" value="1" >500点以上</label></li>
-
-
-
-                                <li class="pull-left"><label for="28"><input tabindex="17" class="mr5" id="28" name="28" type="checkbox" value="1" >600点以上</label></li>
-
-
-
-                                <li class="pull-left"><label for="59"><input tabindex="17" class="mr5" id="59" name="59" type="checkbox" value="1" >730点以上</label></li>
-
-
-
-                                <li class="pull-left"><label for="75"><input tabindex="17" class="mr5" id="75" name="75" type="checkbox" value="1" >860点以上</label></li>
-
-
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>簿記</th>
-                        <td>
-                            <ul class="list-skill-col4 clearfix">
-
-
-                                <li class="pull-left"><label for="30"><input class="mr5" tabindex="17" id="30" name="30" type="checkbox" value="1" >簿記3級</label></li>
-
-
-
-                                <li class="pull-left"><label for="65"><input class="mr5" tabindex="17" id="65" name="65" type="checkbox" value="1" >簿記2級</label></li>
-
-
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>情報系資格</th>
-                        <td>
-                            <ul class="list-skill-col3 clearfix">
-
-
-                                <li class="pull-left mb10"><label for="63"><input tabindex="17" class="mr5" id="63" name="63" type="checkbox" value="1" >初級シスアド</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="58"><input tabindex="17" class="mr5" id="58" name="58" type="checkbox" value="1" >ソフトウェア開発技術者</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="62"><input tabindex="17" class="mr5" id="62" name="62" type="checkbox" value="1" >基本情報技術者</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="91"><input tabindex="17" class="mr5" id="91" name="91" type="checkbox" value="1" >CCNA</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="92"><input tabindex="17" class="mr5" id="92" name="92" type="checkbox" value="1" >CCNP</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="56"><input tabindex="17" class="mr5" id="56" name="56" type="checkbox" value="1" >MOT</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="96"><input tabindex="17" class="mr5" id="96" name="96" type="checkbox" value="1" >OracleMaster</label></li>
-
-
-
-                                <li class="pull-left mb10"><label for="97"><input tabindex="17" class="mr5" id="97" name="97" type="checkbox" value="1" >MOS(旧MOUS)</label></li>
-
-
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-            </section>
-
             <section>
                 <h2 class="h2 text-em mb10">スキルに関する捕足</h2>
                 <div class="box-md bg-default border-t-gray border-b-gray mb50">
-                    <textarea placeholder="上記以外にあなたのスキルについてアピールしたいことがあればご記入ください" tabindex="" name="s_other">随便&#35828;的&#21861;</textarea>
+                    <textarea placeholder="上記以外にあなたのスキルについてアピールしたいことがあればご記入ください" tabindex="" name="s_other">{{$user->s_other}}</textarea>
                 </div>
             </section>
 

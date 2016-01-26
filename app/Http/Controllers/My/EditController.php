@@ -125,6 +125,7 @@ class EditController extends Controller
                             }])
                             ->orderBy('sort_order','asc')
                             ->get();
+//        return $skill_categories;
         $resumes = Resume::with('shokushu')->with('keitai')->where('user_id',$this->user['id'])->orderBy('syear', 'desc','smonth','desc')
         ->get();
         $shokushus = Shokushu::orderby('sort_order','asc')->get();
@@ -135,7 +136,7 @@ class EditController extends Controller
     //更新用户履历
     function update_resume(Request $request)
     {
-        $user_data = $request->only('name','kana','sex','birthday_year','birthday_month','birthday_day','ken','jusho','jusho2','tel','tel2','email','m_email','m_domain','g_name','g_gakubu','g_year','g_type');
+        $user_data = $request->only('name','kana','sex','birthday_year','birthday_month','birthday_day','ken','jusho','jusho2','tel','tel2','email','m_email','m_domain','g_name','g_gakubu','g_year','g_type','shokureki');
         $user = User::find($this->user['id']);
         $user->update($user_data);
         $resumes = $request->only('resume');
@@ -148,6 +149,12 @@ class EditController extends Controller
             Resume::where("id",$v)->update($resume);
         }
         return redirect('/my/edit/edit_resume');
+    }
+
+    //追加履历
+    public function add_resume()
+    {
+        return view('my.edit.resume_add');
     }
 
     //修改密码
@@ -165,11 +172,35 @@ class EditController extends Controller
             ->orderBy('sort_order','asc')
             ->get();
 //        return $skill_categories;
-        $user_skills = User_skill::where('user_id',$this->user['id'])->lists('skill_id');
+        $user_skills = User_skill::where('user_id',$this->user['id'])->get();
+        $my_skills = [];
+        foreach ($user_skills as $skill) {
+            $my_skills["$skill->skill_id"] = $skill->value;
+        }
 //        return ($user_skills);
-        return view('my.edit.skill',['skill_categories' => $skill_categories,'user_skills' => $user_skills]);
+//        return ($my_skills);
+        return view('my.edit.skill',['skill_categories' => $skill_categories,'user_skills' => $user_skills,'my_skills' => $my_skills]);
     }
 
+    public function update_skill(Request $request)
+    {
+//        return $request->all();
+        $user_id = $this->user->id;
+        User_skill::where("user_id", $user_id)->delete();       //删除原始数据
+
+        //技能表
+        foreach ($request->except(['s_other']) as $skill => $value) {
+            $user_skill = [];
+            $user_skill['user_id'] = $user_id;
+            $user_skill['skill_id'] = $skill;
+            $user_skill['value'] = $value;
+            User_skill::create($user_skill);
+        }
+
+        //补充技能
+        User::where('id', $user_id)->update(['s_other' => $request->s_other]);
+        return redirect('/my/edit/edit_resume');
+    }
     //修改职业技能
     function rireki_add()
     {
