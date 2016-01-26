@@ -85,7 +85,7 @@
                         <div class="clearfix border-b-gray mb15 pb20">
                             <p class="text-lg pull-left mt5">スカウトメールを受け取る</p>
 
-                            <a href="javascript:void(0);" data-submitted="scout_form" data-action="" class="btn btn-md btn-secondary pull-right fj-submit">スカウトメール設定変更</a>
+                            <a href="/my/edit/edit_scout"  class="btn btn-md btn-secondary pull-right fj-submit">スカウトメール設定変更</a>
                         </div>
                         <p class="text-alert text-md">
 
@@ -154,7 +154,7 @@
                             </tr>
                             </tbody>
                         </table>
-                        <a href="javascript:void(0);" data-submitted="mail" data-action="" class="btn btn-md btn-secondary btn-normal pull-right fj-submit">希望条件変更</a>
+                        <a href="/my/edit/edit_mail"  class="btn btn-md btn-secondary btn-normal pull-right fj-submit">希望条件変更</a>
                     </div>
                 </section>
 

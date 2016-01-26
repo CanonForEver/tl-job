@@ -91,11 +91,6 @@ class EditController extends Controller
     //编辑各种信息列表
 
 
-    //删除职务经历
-    function rireki_delete()
-    {
-    }
-
 
     //编辑用户信息
     function edit_name()
@@ -162,23 +157,16 @@ class EditController extends Controller
     //存储追加履历
     public function store_add_resume(Request $request)
     {
-//        return $request->all();
         Resume::create($request->all());
         return redirect('/my/edit/edit_resume');
     }
 
+    //删除履历
     public function delete_resume($resume_id)
     {
         Resume::where('id',$resume_id)->delete();
         return redirect('/my/edit/edit_resume');
     }
-    //修改密码
-    function change_passwd(Request $request)
-    {
-        dump($request->all());
-        return view('my.edit.change_passwd');
-    }
-
 
     //修改职业技能
     function edit_skill()
@@ -216,17 +204,31 @@ class EditController extends Controller
         User::where('id', $user_id)->update(['s_other' => $request->s_other]);
         return redirect('/my/edit/edit_resume');
     }
-    //修改职业技能
-    function rireki_add()
+
+   //修改跟踪设定
+    public function edit_scout()
     {
-        return view('my.edit.rireki_add');
+        return view('my.edit.edit_scout');
     }
 
+    //跟新跟踪条件
+    public function update_scout(Request $request)
+    {
+        User::where('id', $this->user->id)->update(['scout' => $request->enable]);
+        return redirect('/my/edit/edit');
+    }
 
     ////希望的工作条件,是否接受邮件
-    function mail()
+    function edit_mail()
     {
         return view('my.edit.mail');
+    }
+
+    //修改密码
+    function change_passwd(Request $request)
+    {
+        dump($request->all());
+        return view('my.edit.change_passwd');
     }
 
 

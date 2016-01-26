@@ -80,13 +80,17 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('store_add_resume', 'EditController@store_add_resume');    //存储追加履历
             Route::delete('/{resume_id}/delete_resume', 'EditController@delete_resume');     //删除履历
 
-
-            Route::get('edit_skill', 'EditController@edit_skill');                    // 编辑用户信息
+            Route::get('edit_skill', 'EditController@edit_skill');                        // 编辑用户信息
             Route::put('update_skill', 'EditController@update_skill');                    // 编辑用户信息
+
+            Route::get('edit_scout', 'EditController@edit_scout');                  // 修改跟踪设定
+            Route::put('update_scout', 'EditController@update_scout');                  // 更新跟踪设定
+
+            Route::get('edit_mail', 'EditController@edit_mail');                  //编辑希望条件
+
 
 
             Route::post('change_passwd', 'EditController@change_passwd');           // 修改密码
-            Route::get('edit_scout', 'EditController@edit_scout');                  // 邮件通知
         });
 
 
