@@ -102,11 +102,8 @@ class EditController extends Controller
     //更新用户信息
     function update_edit_name(Request $request)
     {
-//        return ($request->all());
         $user = User::find($this->user['id']);
-//        $data = array_add($request->except('id'));
         $data = $request->only('name','kana','sex','email','m_email','m_domain');
-//        return ($data);
         $user->update($data);
         return  redirect("/my/edit/edit");
     }
