@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_keitai extends Model
 {
-    protected $guarded = [];
+    public $timestamps = false;
+
+    protected $fillable = [
+        'user_id','keitai_id'
+    ];
 
     public function keitai()
     {

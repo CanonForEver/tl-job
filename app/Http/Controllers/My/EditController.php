@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\My;
 
 use App\Models\Skill;
+use App\models\User_keitai;
 use App\Models\User_skill;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -219,12 +220,77 @@ class EditController extends Controller
     }
 
     ////希望的工作条件,是否接受邮件
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function edit_mail()
     {
-        return view('my.edit.mail');
+        $shokushus = Shokushu::orderby('sort_order','asc')->get();
+        $user_shokushus = User_shokushu::where('user_id',$this->user['id'])->get();
+        $kinmuchis = Kinmuchi::get();
+        $user_kinmuchis = User_kinmuchi::where('user_id',$this->user['id'])->get();
+        $keitais = Keitai::orderby('sort_order','asc')->get();
+        $user_keitais = User_keitai::where('user_id',$this->user['id'])->get();
+
+        //希望工作
+        $user_shokushu = [];
+        foreach ($user_shokushus as $v) {
+            $user_shokushu[] = $v->shokushu_id;
+        }
+
+        //希望工作地点
+        $user_kinmuchi = [];
+        foreach ($user_kinmuchis as $v) {
+            $user_kinmuchi[] = $v->kinmuchi_id;
+        }
+
+        //希望雇佣形式
+        $user_keitai = [];
+        foreach ($user_keitais as $v) {
+            $user_keitai[] = $v->keitai_id;
+        }
+        return view('my.edit.mail',['shokushus'=>$shokushus,'kinmuchis'=>$kinmuchis,'keitais'=>$keitais,'user_shokushu'=>$user_shokushu,'user_kinmuchi'=>$user_kinmuchi,'user_keitai'=>$user_keitai]);
+    }
+
+    public function update_edit_mail(Request $request)
+    {
+        $user_id = $this->user->id;
+        User_shokushu::where("user_id", $user_id)->delete();       //删除原始数据
+        if($request->k_shokushu){
+            foreach ($request->k_shokushu as  $value) {
+                $user_shokushu = [];
+                $user_shokushu['user_id'] = $user_id;
+                $user_shokushu['shokushu_id'] = $value;
+                User_shokushu::create($user_shokushu);
+            }
+        }
+
+        User_kinmuchi::where("user_id", $user_id)->delete();       //删除原始数据
+        if($request->k_kinmuchi) {
+            foreach ($request->k_kinmuchi as $value) {
+                $user_kinmuchi = [];
+                $user_kinmuchi['user_id'] = $user_id;
+                $user_kinmuchi['kinmuchi_id'] = $value;
+                User_kinmuchi::create($user_kinmuchi);
+            }
+        }
+
+        User_keitai::where("user_id", $user_id)->delete();       //删除原始数据
+        if($request->k_keitai) {
+            foreach ($request->k_keitai as $value) {
+                $user_keitai = [];
+                $user_keitai['user_id'] = $user_id;
+                $user_keitai['keitai_id'] = $value;
+                User_keitai::create($user_keitai);
+            }
+        }
+
+        User::where('id',$this->user->id)->update($request->only(['k_jikyuu','k_gekkyuu','k_nenbou','html_mail','mailservice_new','mailservice_pickup','mailservice_digest','mailservice_dm']));
+        return redirect('/my/edit/edit');
     }
 
     //修改密码
+
     function change_passwd(Request $request)
     {
         dump($request->all());

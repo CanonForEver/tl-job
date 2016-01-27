@@ -51,7 +51,7 @@
                     <li class="pull-left mr40"><label><input name="enable" value="1" type="radio" class="mr5" @if($user->scout == 1) checked @endif>受け取る</label></li>
                     <li class="pull-left"><label><input name="enable" value="0" type="radio" class="mr5" @if($user->scout == 0) checked @endif>受け取らない</label></li>
                 </ul>
-                
+
             </div>
             <table class="input-cell">
                 <tbody><tr>
@@ -63,7 +63,8 @@
                         <input type="submit" class="btn btn-md btn-secondary pull-right" value="指定企業ブロックへ">
                     </td>
                 </tr>
-            </tbody></table>
+            </tbody>
+            </table>
             <div class="relative text-center mt40">
                 <a href="./スカウトメール設定 [登録情報] _ 求人情報 Find Job !_files/スカウトメール設定 [登録情報] _ 求人情報 Find Job !.html" class="btn btn-md btn-default btn-normal fixed-left">登録情報トップに戻る</a>
                 <input type="submit" name="scout_edit" class="btn btn-xxlg btn-primary btn-wide block-center" value="スカウトメールを設定する">

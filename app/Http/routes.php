@@ -87,6 +87,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::put('update_scout', 'EditController@update_scout');                  // 更新跟踪设定
 
             Route::get('edit_mail', 'EditController@edit_mail');                  //编辑希望条件
+            Route::put('update_edit_mail', 'EditController@update_edit_mail');                  //更新希望条件
 
 
 
