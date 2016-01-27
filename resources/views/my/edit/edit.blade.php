@@ -172,7 +172,7 @@
                     <h2 class="h2 text-em mb10">修改密码</h2>
                     <div class="box box-md clearfix mb40">
                         <p class="text-alert pull-left mt5">※セキュリティー上の観点から、定期的に変更いただくことをおすすめします。</p>
-                        <a href="javascript:void(0);" data-submitted="" data-action="change_passwd" class="btn btn-md btn-secondary btn-normal pull-right fj-submit">修改密码</a>
+                        <a href="/my/edit/change_passwd"  class="btn btn-md btn-secondary btn-normal pull-right fj-submit">修改密码</a>
                     </div>
                 </section>
 

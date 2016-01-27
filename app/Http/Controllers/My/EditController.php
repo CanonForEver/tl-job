@@ -216,10 +216,7 @@ class EditController extends Controller
         return redirect('/my/edit/edit');
     }
 
-    ////希望的工作条件,是否接受邮件
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+    //希望的工作条件,是否接受邮件
     function edit_mail()
     {
         $shokushus = Shokushu::orderby('sort_order','asc')->get();
@@ -287,11 +284,28 @@ class EditController extends Controller
     }
 
     //修改密码
-
-    function change_passwd(Request $request)
+    function change_passwd()
     {
-        dump($request->all());
         return view('my.edit.change_passwd');
+    }
+
+
+    //更新密码
+   // 缺少验证
+    public function do_change_passwd(Request $request)
+    {
+        if($request->passwd != $request->passwd2)
+        {
+            return back();
+        }
+        $user = User::find($this->user->id);
+        if($user)
+        {
+            $user->update(['password' => bcrypt($request->passwd)]);
+        }else{
+            return back();
+        }
+        return redirect('/my/edit/edit');
     }
 
 

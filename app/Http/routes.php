@@ -89,9 +89,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('edit_mail', 'EditController@edit_mail');                  //编辑希望条件
             Route::put('update_edit_mail', 'EditController@update_edit_mail');                  //更新希望条件
 
-
-
-            Route::post('change_passwd', 'EditController@change_passwd');           // 修改密码
+            Route::get('change_passwd', 'EditController@change_passwd');           // 修改密码
+            Route::put('do_change_passwd', 'EditController@do_change_passwd');           // 更新密码
         });
 
 

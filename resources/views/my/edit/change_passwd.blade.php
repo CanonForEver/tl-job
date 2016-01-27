@@ -22,18 +22,17 @@
         
         <p class="mb40">以下のフォームにパスワードに設定する文字を入力し、『パスワードを変更する』ボタンを押してください。</p>
 
-        <form class="form" name="edit" method="post">
-        <input type="hidden" value="1" name="submitted">
-        <input type="hidden" value="mail" name="frm">
-        <input type="hidden" name="mid">
-        <input type="hidden" name="from">
-        <input type="hidden" name="userid">
+        <form class="form" name=""  action="/my/edit/do_change_passwd" method="post">
+            {!! csrf_field() !!}
+            {!! method_field('put') !!}
+
             <table class="input-cell mb50">
                 <tbody><tr>
                     <th>现在的密码</th>
                     <td>
+                        <input hidden name="email"  value="{{$user->email}}">
                         <input type="password" name="old_passwd" placeholder="" class="">
-                        
+
                         <ul class="mt15">
                             <li>※半角英数字 (0〜9、A〜Z)、6〜20文字で入力してください。</li>
                         </ul>
