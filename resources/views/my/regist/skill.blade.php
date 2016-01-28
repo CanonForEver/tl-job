@@ -67,7 +67,7 @@
 
                                                        @if($my_skills and $i == $my_skills["$skill->id"])
                                                        checked
-                                                        @endif
+                                                       @endif
                                                 >
                                             </td>
                                         @endfor

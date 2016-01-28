@@ -66,12 +66,13 @@ $(function(){
         if (data){
           //disable bookmark button
           $('a.fj-add-to-bookmark[data-job-id='+jobId+']').addClass('btn-disabled');
-          pageTracker._trackEvent('add_bookmark', action, label);
+          //pageTracker._trackEvent('add_bookmark', action, label);
 
         }
     })
   });
 
+  //没登录,模态提示框
   $('.fj-show-login-box').on('click', function(e) {
     e.preventDefault();
 
@@ -79,7 +80,7 @@ $(function(){
     var action      = $(_self).data('action');
     var label       = $(_self).data('label');
 
-    pageTracker._trackEvent('add_bookmark', action, label);
+    //pageTracker._trackEvent('add_bookmark', action, label);
 
     $('.fj-login-modal').plainModal('open', {
       closeClass: 'fj-login-modal-close',

@@ -52,11 +52,48 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 
-//    //公司部分
-//    Route::group(['prefix' => 'com'], function () {
-//        Route::get('regist', 'ComController@regist');
-//        Route::get('login', 'ComController@login');
-//    });
+    //公司部分
+    Route::group(['namespace' => 'Com', 'prefix' => 'com'], function () {
+        Route::get('/', 'IndexController@index');                       //公司首页
+
+        //公司注册
+        Route::group(['prefix' => 'regist'], function () {
+            Route::get('regist_company', 'registController@regist_company');
+            Route::post('regist_company', 'registController@regist_company_store');
+
+            //确认公司信息
+            Route::get('show_confirm', 'registController@show_confirm');
+            Route::post('show_confirm', 'registController@show_confirm_request');
+
+            //注册完成
+            Route::get('show_finish', 'registController@show_finish');
+        });
+
+
+        //求人广告制作
+        Route::group(['prefix' => 'job'], function () {
+            //编辑公司信息
+            Route::get('editjob_company', 'jobController@editjob_company');
+            Route::post('editjob_company', 'jobController@editjob_company_store');
+
+
+            //编辑招聘要求
+            Route::get('editjob', 'jobController@editjob');
+            Route::post('editjob', 'jobController@editjob_store');
+
+
+            //待遇
+            Route::get('edit_pr', 'jobController@edit_pr');
+            Route::post('edit_pr', 'jobController@edit_pr_store');
+
+
+
+
+        });
+
+
+        Route::get('login', 'ComController@login');
+    });
 
 
     //用户中心

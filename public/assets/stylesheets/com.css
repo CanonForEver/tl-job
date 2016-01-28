@@ -1,0 +1,30 @@
+@charset "euc-jp";
+
+.container-read{width:1000px; 0;margin:0 auto;}
+.container-com{width:960px;padding:60px 0;margin:0 auto;}
+    .container-com p{}
+
+#header{min-width:960px;}
+
+.main{height:450px;background:url(/images/com/bg_main.png) center center no-repeat;background-size:cover;}
+    .main ul{margin:0 auto;}
+
+.btn-regist{font-size:22px;width:330px;height:48px;line-height:48px;}
+.btn-regist-lg{font-size:22px;width:400px;height:58px;line-height:58px;}
+
+.cost-creator{width:300px;height:298px;text-indent:-9999px;background:url(/images/com/cost_creator.png) 0 0 no-repeat;}
+.cost-engineer{width:300px;height:298px;text-indent:-9999px;background:url(/images/com/cost_engineer.png) 0 0 no-repeat;}
+.cost-general{width:300px;height:298px;text-indent:-9999px;background:url(/images/com/cost_general.png) 0 0 no-repeat;}
+
+.box-profile{margin:0 auto;padding:50px 150px;}
+
+.box-logos{padding:10px 0 20px 0;}
+.box-logos li{margin:10px 20px;}
+
+.box-step{width:860px;background:url(/images/com/bg_step.png) center 75px no-repeat;margin:0 auto;}
+.box-step{}
+
+.box-contact{background:#fafafa;}
+    .box-contact dl{width:430px;height:70px;}
+
+#footer p{white-space:nowrap;}
