@@ -8,6 +8,7 @@ class Resume extends Model
 {
     public $timestamps = false;
     protected $fillable = [
+<<<<<<< HEAD
         'user_id','office','syear','smonth','eyear','emonth','r_shokushu','r_keitai','job_content'
     ];
 
@@ -20,4 +21,16 @@ class Resume extends Model
     {
         return $this->belongsTo('App\Models\Keitai','r_keitai');
     }
+=======
+        'user_id',
+        'office',
+        'syear',
+        'smonth',
+        'eyear',
+        'emonth',
+        'r_shokushu',
+        'r_keitai',
+        'job_content',
+    ];
+>>>>>>> master
 }

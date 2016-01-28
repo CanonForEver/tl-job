@@ -41,7 +41,7 @@
             <input type="hidden" name="ht" value="">
 
             <div class="box-narrow">
-                <p class="mb10">フォームを入力して、利用規約等に同意の上、『会員登録する』ボタンを押してください。</p>
+                <p class="mb10">フォームを入力して、利用規約等に同意の上、『会员注册する』ボタンを押してください。</p>
                 <table class="input-cell mb50">
                     <colgroup>
                         <col style="width:35%;">
@@ -88,7 +88,7 @@
         </form>
 
         <div class="bt_facebook border-t-gray text-center ml80 mr80 pt30">
-            <a href="/login_oauth.pl?p=f&amp;a=l&amp;u=1&amp;next_url=%2F" class="mb40 btn btn-xxlg btn-facebook icon-facebook-lg btn-wide">facebookで会員登録</a>
+            <a href="/login_oauth.pl?p=f&amp;a=l&amp;u=1&amp;next_url=%2F" class="mb40 btn btn-xxlg btn-facebook icon-facebook-lg btn-wide">facebookで会员注册</a>
             <p>※Facebookに利用状況が投稿されることはありません</p>
         </div>
     </div><!--container-->

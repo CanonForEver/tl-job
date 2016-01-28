@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_shokushu extends Model
 {
+<<<<<<< HEAD
     public $timestamps = false;
 
     protected $fillable = [
@@ -16,4 +17,12 @@ class User_shokushu extends Model
     {
         return $this->belongsTo('App\Models\Shokushu');
     }
+=======
+    //
+    public $timestamps = false;
+
+    protected $fillable = [
+        'user_id', 'shokushu_id',
+    ];
+>>>>>>> master
 }

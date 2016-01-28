@@ -1,0 +1,293 @@
+@charset "euc-jp";
+
+/* header : new header_login
+-----------------------------------------------------------*/
+#header_login {
+	padding-bottom:15px;
+	background:url(/img/common/bg_hr002.gif) repeat-x 0% 0%;
+}
+
+#header_login .header_top {
+	height:71px;
+	margin:0 12px 0 15px;
+	padding:0;
+}
+
+
+
+#header_login a:link,
+#header_login a:visited,
+#header_login a:hover,
+#header_login a:active { text-decoration:underline; }
+
+
+
+/* --- left --- */
+#header_login #hd_left {
+	float:left;
+	width:468px;
+	margin:0;
+	padding:0;
+}
+
+#header_login #hd_left span.head_inquiry {
+	display:block;
+	float:right;
+	width:186px;
+	height:51px;
+	margin:14px 0 0 0;
+	background:url(/img/common/bn_inquiry.png) no-repeat left top;
+	text-indent:-9999px;
+}
+
+#header_login #hd_left a {
+	display:block;
+	width:208px;
+	height:50px;
+	margin:16px 0 0 0;
+	background:url(/img/common/logo_fj.gif) no-repeat;
+}
+
+
+/* --- center --- */
+#header_login #hd_center {
+	float:left;
+	width:292px;
+}
+
+#header_login #hd_center ul.hd_subnavi {
+	padding-top:10px;
+	_padding-top:13px;
+	text-align:right;
+}
+
+#header_login #hd_center ul.hd_subnavi li {
+	display:inline;
+	margin-left:20px;
+}
+
+#header_login #hd_center ul.hd_subnavi li img {
+	margin:0;
+	vertical-align:middle;
+}
+
+#header_login #hd_center ul.hd_subnavi_btn {
+	float:right;
+	width:128px;
+	padding-top:10px;
+	_padding-top:8px;
+	text-align:right;
+}
+
+#header_login #hd_center ul.hd_subnavi_btn li {
+	display:inline;
+	margin-left:10px;
+}
+
+#header_login #hd_center ul.hd_subnavi_btn li img {
+	margin:0;
+	vertical-align:middle;
+	_vertical-align:top;
+}
+
+#header_login #hd_center h1.fj_intro,
+#header_login #hd_center p.fj_intro {
+	float:left;
+	width:401px;
+	margin:0 0 0 9px;
+	padding:0;
+	font-size: 83%;
+	font-weight: normal;
+}
+
+
+
+/* tab
+---------------------------------------------------------- */
+#header_login .tab:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+#header_login .tab {
+	display: inline-table;
+	min-height:1%;
+	clear:both;
+	margin:0;
+	padding:0;
+	height:36px;
+	background:url(/img/com_common/tab_bg.gif) repeat-x bottom;
+	position:relative;
+}
+
+/* Hides from IE-mac \*/
+* html #header_login .tab { height: 1%; }
+#header_login .tab { display: block; }
+/* End hide from IE-mac */
+
+#header_login .tab ul {
+	display:block;
+	float:left;
+	height:36px;
+	margin-right:auto;
+	margin-left:15px;
+	padding:0;
+	position:absolute;
+	bottom:0px;
+}
+
+#header_login .tab ul li.maintab {
+	display:block;
+	float:left;
+	height:26px;
+	margin-top:10px;
+	margin-left:2px;
+	background-repeat:no-repeat;
+}
+
+#header_login .tab ul li.maintab a {
+	display:block;
+	height:26px;
+}
+
+#header_login .tab ul li.maintab a span {
+	display:none;
+}
+
+
+#header_login .tab .wm_job            { background-image:url(/img/com_common/tab_bt21off.gif);	width:147px; }
+#header_login .tab .wm_job_on         { background-image:url(/img/com_common/tab_bt21on.gif);	width:147px; }
+
+#header_login .tab .search_scout      { background-image:url(/img/com_common/tab_bt27off.gif);	width:143px; }
+#header_login .tab .search_scout_on   { background-image:url(/img/com_common/tab_bt27on.gif);	width:143px; }
+
+#header_login .tab .purchase          { background-image:url(/img/com_common/tab_bt23off.gif);	width:152px; }
+#header_login .tab .purchase_on       { background-image:url(/img/com_common/tab_bt23on.gif);	width:152px; }
+
+#header_login .tab .agent      { background-image:url(/img/com_common/tab_bt24off.gif);	width:143px; }
+#header_login .tab .agent_on   { background-image:url(/img/com_common/tab_bt24on.gif);	width:143px; }
+
+#header_login .tab .outsource      { background-image:url(/img/com_common/tab_bt25off.gif);	width:143px; }
+#header_login .tab .outsource_on   { background-image:url(/img/com_common/tab_bt25on.gif);	width:143px; }
+
+#header_login .tab .newarrival{position:absolute;top:-26px;left:28px;}
+
+/* in_out
+---------------------------------------------------------- */
+#header_login .tab #in_out {
+	display:block;
+	position:absolute;
+	top:-5px;
+	right:0;
+	width:278px;
+	margin-right:15px;
+	_margin-right:8px;
+	padding-bottom:6px;
+	text-align:right;
+	font-size:83%;
+}
+
+
+
+/* topic_path
+---------------------------------------------------------- */
+.cont_login .topic_path,
+#header_login .topic_path {
+	font-size:83%;
+	color:#666;
+	background-color:#fff;
+	border-bottom:1px solid #ccc;
+}
+
+.cont_login .cont_full .topic_path {  padding:5px 15px 10px;  }
+.cont_login .topic_path {  padding:5px 0 10px;  }
+#header_login .topic_path {  padding:7px 15px 0;  }
+
+
+.cont_login .topic_path p,
+#header_login .topic_path p {padding:0 0 4px 0;
+}
+
+.cont_login .topic_path a,
+#header_login .topic_path a {
+}
+
+.cont_login .topic_path strong,
+#header_login .topic_path strong {
+	font-weight:normal;
+	color:#000000;
+}
+
+.cont_login .topic_path h1,
+#header_login .topic_path h1 {
+	display:inline;
+	font-weight:normal;
+	color:#000000;
+	font-size:100%;
+}
+
+
+
+
+/* adjust css for old-css
+-----------------------------------------------------------*/
+
+/* ----- header_simple ----- */
+#header_simple {
+	height:94px;
+	background:#fff url(/img/com_common/tab_bg.gif) repeat-x left 66px;
+	padding-bottom:15px;
+}
+
+#header_simple #header_top {
+	height:70px;
+	margin:0 12px 0 15px;
+	padding:0;
+}
+
+#header_simple #hd_left {
+	float:left;
+	width:220px;
+	height:70px;
+}
+
+#header_simple #hd_left a {
+	display:block;
+	width:208px;
+	height:50px;
+	margin:20px 0 0 0;
+	background:url(/img/common/logo_fj.gif) no-repeat;
+}
+
+#header_simple #hd_center {
+	float:left;
+	width:395px;
+}
+
+#header_simple #hd_center p {
+	margin:28px 0 0 9px;
+	padding:0;
+	font-size: 83%;
+	font-weight: normal;
+}
+
+
+
+/* ----- footer02 ----- */
+#footer02 {
+	clear:both;
+	margin-right:0px;
+	margin-left:0px;
+	padding-right:0px;
+	padding-left:0px;
+	border-top:1px solid #ccc;
+	font-size:0.833em;
+}
+
+
+
+
+/* ----- EOF ----- */
