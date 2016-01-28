@@ -5,8 +5,8 @@
 <div id="topic-path" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
     <ul>
         <li><a href="/" itemprop="url"><span itemprop="title">転職・求人情報</span></a></li>
-        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href=""><span itemprop="title">会员注册情報</span></a></li>
-        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong><span itemprop="title">会员注册情報</span></strong></li>
+        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href=""><span itemprop="title">会員登録情報</span></a></li>
+        <li itemprop="child" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><strong><span itemprop="title">会員登録情報</span></strong></li>
     </ul>
 </div><!--topic-path-->
 @stop
