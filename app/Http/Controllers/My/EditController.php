@@ -34,8 +34,21 @@ class EditController extends Controller
         }
 
         view()->share(['user' =>session('user')]);
-//        dump(session('user'));
-}
+    }
+
+    //验证错误信息
+    private function messages()
+    {
+        return [
+            'email.required' => '邮箱不能为空！',
+            'email.unique' => '邮箱已经存在!',
+            'passwd.required' => '密码不能为空！',
+            'k_shokushu.required' => '至少选择一个希望的职位',
+            'k_kinmuchi.required' => '至少选择一个希望的工作地点',
+            'k_keitai.required' => '至少选择一个希望的雇佣形式',
+        ];
+    }
+
     function index()
     {
         $user_shokushus = User::with('user_shokushus.shokushu')->find($this->user['id']);
@@ -50,47 +63,6 @@ class EditController extends Controller
 
         return view('my.edit.edit',['shokushus' => $shokushus,'kinmuchis' => $kinmuchis,'keitais' => $keitais]);
     }
-
-
-    //相同路由，不同函数，各种编辑...!!!
-    //功能试验
-    function edit(Request $request)
-    {
-//        dump($request->all());
-        switch ($request->submitted) {
-            case 'edit_name':
-                return $this->update_edit_name($request);
-                break;
-            case 'career':                   //编辑各种信息列表
-                return $this->career();
-                break;
-
-            case 'skill':                   //显示修改职业技能
-                return $this->skill();
-                break;
-            case 'skill_form':              //执行修改职业技能
-                return $this->skill_form();
-                break;
-
-            case 'rireki_delete':           //删除职务经历
-                $this->rireki_delete();
-                break;
-            case 'block_scout':
-                return $this->skill();
-                break;
-            case 'rireki_add':              //职务经历追加
-                return $this->rireki_add();
-                break;
-
-            case 'mail':                    //希望的工作条件,是否接受邮件
-                return $this->mail();
-                break;
-
-        }
-    }
-
-    //编辑各种信息列表
-
 
 
     //编辑用户信息

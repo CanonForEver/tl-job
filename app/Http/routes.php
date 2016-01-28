@@ -96,7 +96,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('show_resume', 'IndexController@show_resume');                   // 显示履历信息
         Route::get('list_search_condition', 'IndexController@list_search_condition');       // 检索记录保存
-        Route::get('delete_search_condition', 'IndexController@delete_search_condition');   // 删除检索条件
+        Route::delete('/{search_id}/delete_search_condition', 'IndexController@delete_search_condition');   // 删除检索条件
 
 
         // 信息管理
