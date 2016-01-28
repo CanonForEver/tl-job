@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+*{margin:0px; padding:0px;}
+
+html{width:100%; height:100%;}
+
+body{width:100%; height:100%; color:#3d3d3d; font:normal normal normal 12px/1.6 ＭＳ Ｐゴシック, 'Lucida Grande', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'HG丸ゴシックM-PRO', sans-serif; background:#fff;text-align:center;}
+
+/* regular tags style --------------------------------------------------------------------------- */
+h1,h2,h3,h4,h5,div,p,span,ul,ol,li,dl,dt,dd,em,strong,dfn,hr{white-space:normal;}
+
+ul{list-style:none;}
+em,strong{font-weight:bold; font-style:normal;}
+img{background:transparent; border:none;}
+br{clear:both;}
+hr{clear:both; height:1px; border:none;}
+.hidden{display:none;}
+.fL{float:left;}
+.fR{float:right;}
+
+a{color:#003399; text-decoration:underline;outline:none;}
+a:link{text-decoration:none;}
+a:visited{color:#003399;text-decoration:none;}
+a:hover{color:#003399;text-decoration:underline;}
+a:active{text-decoration:underline;}
+
+/* common layouts ------------------------------------------------------------------------------- */
+div#wrap{position:relative; width:100%;min-height:100%;margin:0 auto;text-align:center;}
+html > div#wrap{height:auto;}
+/* \ */* html div#wrap {height:100%;}
+
+/* clear float style ---------------------------------------------------------------------- */
+.clearfix:after{ content: "."; display: block; clear: both; height: 0; visibility: hidden;}
+.clearfix{min-height:1px;}
+* html .clearfix{height:1px; /*\*//*/height: auto; overflow: hidden;/**/}

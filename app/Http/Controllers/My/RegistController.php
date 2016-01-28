@@ -164,6 +164,7 @@ class RegistController extends Controller
 
     function rireki_store(Request $request)
     {
+//        return $request->all();
         //先储存自己的信息,再判断请求后,跳转
         $user = User::find($this->user->id);
         $user->update($request->all());
@@ -226,6 +227,7 @@ class RegistController extends Controller
     {
         //技能列表
         $skill_categories = Skill_category::with('skills')->orderBy('sort_order')->get();
+//        return $skill_categories;
 
         //当前用户的技能,并重新组装数组
         $user_skills = User_skill::where('user_id', $this->user->id)->get();
@@ -233,7 +235,7 @@ class RegistController extends Controller
         foreach ($user_skills as $skill) {
             $my_skills["$skill->skill_id"] = $skill->value;
         }
-        //return $skills;
+//        return $my_skills;
 
         return view('my.regist.skill')
             ->with('skill_categories', $skill_categories)
