@@ -37,7 +37,10 @@
 
         <section>
             <h2 class="h2 text-em mb10">設定</h2>
-            <form action="./スカウトメール設定 [登録情報] _ 求人情報 Find Job !_files/スカウトメール設定 [登録情報] _ 求人情報 Find Job !.html" method="post" name="edit" class="form">
+            <form action="/my/edit/update_scout" method="post"  class="form">
+                {!! csrf_field() !!}
+                {!! method_field('put') !!}
+
             <input type="hidden" name="submitted" value="block_scout">
             <input type="hidden" name="from" value="">
             <input type="hidden" name="userid" value="557782">
@@ -45,10 +48,10 @@
             <div class="box box-sm mb40">
                 <p class="mb10">現在、スカウトメールを受け取る設定になっています。</p>
                 <ul class="box-sm bg-yellow clearfix">
-                    <li class="pull-left mr40"><label><input name="enable" value="1" type="radio" class="mr5" checked="">受け取る</label></li>
-                    <li class="pull-left"><label><input name="enable" value="0" type="radio" class="mr5">受け取らない</label></li>
+                    <li class="pull-left mr40"><label><input name="enable" value="1" type="radio" class="mr5" @if($user->scout == 1) checked @endif>受け取る</label></li>
+                    <li class="pull-left"><label><input name="enable" value="0" type="radio" class="mr5" @if($user->scout == 0) checked @endif>受け取らない</label></li>
                 </ul>
-                
+
             </div>
             <table class="input-cell">
                 <tbody><tr>
@@ -60,7 +63,8 @@
                         <input type="submit" class="btn btn-md btn-secondary pull-right" value="指定企業ブロックへ">
                     </td>
                 </tr>
-            </tbody></table>
+            </tbody>
+            </table>
             <div class="relative text-center mt40">
                 <a href="./スカウトメール設定 [登録情報] _ 求人情報 Find Job !_files/スカウトメール設定 [登録情報] _ 求人情報 Find Job !.html" class="btn btn-md btn-default btn-normal fixed-left">登録情報トップに戻る</a>
                 <input type="submit" name="scout_edit" class="btn btn-xxlg btn-primary btn-wide block-center" value="スカウトメールを設定する">

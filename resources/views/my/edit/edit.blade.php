@@ -33,15 +33,21 @@
                             <tbody>
                             <tr>
                                 <th>姓名</th>
-                                <td>山田</td>
+                                <td>{{$user->name}}</td>
                             </tr>
                             <tr>
                                 <th>性別</th>
-                                <td>男性</td>
+                                <td>
+                                    @if($user->sex == 1)
+                                        男性
+                                    @elseif($user->sex == 2)
+                                        女性
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th>电子邮件</th>
-                                <td>canonpd@163.com</td>
+                                <td>{{$user->email}}</td>
                             </tr>
 
                             <tr>
@@ -65,7 +71,8 @@
                         <p class="pull-left mt5">※ Web简历，招聘企业阅览的事能的你的履历书。 <br>
                             选拔接受邮件设定和招聘企业Web简历公开。</p>
 
-                        <a href="javascript:void(0);" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>
+                        {{--<a href="javascript:void(0);" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>--}}
+                        <a href="/my/edit/edit_resume" data-submitted="career" data-action="" class="btn btn-md btn-secondary pull-right ml20 pl15 pr15 fj-submit">Web履历书修改</a>
 
                         <a href="/my/show_resume" target="_blank"
                            class="btn btn-md btn-secondary pull-right pl15 pr15">Web简历书确认</a>
@@ -78,7 +85,7 @@
                         <div class="clearfix border-b-gray mb15 pb20">
                             <p class="text-lg pull-left mt5">スカウトメールを受け取る</p>
 
-                            <a href="javascript:void(0);" data-submitted="scout_form" data-action="" class="btn btn-md btn-secondary pull-right fj-submit">スカウトメール設定変更</a>
+                            <a href="/my/edit/edit_scout"  class="btn btn-md btn-secondary pull-right fj-submit">スカウトメール設定変更</a>
                         </div>
                         <p class="text-alert text-md">
 
@@ -97,15 +104,27 @@
                             <tbody>
                             <tr>
                                 <th>希望職種</th>
-                                <td>Webデザイナー・HTMLコーダー</td>
+                                <td>
+                                    @foreach($shokushus as $shokushu)
+                                        {{$shokushu['shokushu']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>希望勤務地</th>
-                                <td>東京23区、東京23区外</td>
+                                <td>
+                                    @foreach($kinmuchis as $kinmuchi)
+                                        {{$kinmuchi['kinmuchi']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>希望雇用形態</th>
-                                <td>正社員(中途)</td>
+                                <td>
+                                    @foreach($keitais as $keitai)
+                                        {{$keitai['keitai']['name']}},
+                                    @endforeach
+                                </td>
                             </tr>
                             <tr>
                                 <th>新着求人情報</th>
@@ -125,11 +144,17 @@
                             </tr>
                             <tr>
                                 <th>メールの配信形式</th>
-                                <td>HTML形式</td>
+                                <td>
+                                    @if($user->html_mail == 1)
+                                        HTML形式
+                                    @elseif($user->html_mail == 2)
+                                        Mail形式
+                                    @endif
+                                </td>
                             </tr>
                             </tbody>
                         </table>
-                        <a href="javascript:void(0);" data-submitted="mail" data-action="" class="btn btn-md btn-secondary btn-normal pull-right fj-submit">希望条件変更</a>
+                        <a href="/my/edit/edit_mail"  class="btn btn-md btn-secondary btn-normal pull-right fj-submit">希望条件変更</a>
                     </div>
                 </section>
 
@@ -147,7 +172,7 @@
                     <h2 class="h2 text-em mb10">修改密码</h2>
                     <div class="box box-md clearfix mb40">
                         <p class="text-alert pull-left mt5">※セキュリティー上の観点から、定期的に変更いただくことをおすすめします。</p>
-                        <a href="javascript:void(0);" data-submitted="" data-action="change_passwd" class="btn btn-md btn-secondary btn-normal pull-right fj-submit">修改密码</a>
+                        <a href="/my/edit/change_passwd"  class="btn btn-md btn-secondary btn-normal pull-right fj-submit">修改密码</a>
                     </div>
                 </section>
 

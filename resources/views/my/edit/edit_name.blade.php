@@ -22,13 +22,11 @@
         <p class="mb40">以下のフォームに必要事項をご記入の上、『登録内容を変更する』ボタンを押してください。 <br>
         ※ <img src="/images/edit/icon_lock.png" alt="非公開" class="mr5">マークのついている情報は企業には公開されません。</p>
 
-        <form class="form" name="edit" action="/images/edit/edit_name.html" method="post">
-        <input type="hidden" value="1" name="submitted">
-        <input type="hidden" value="mail" name="frm">
-        <input type="hidden" name="mid">
-        <input type="hidden" name="from">
-        <input type="hidden" name="userid">
-        <input type="hidden" name="unique_key" value="742f52987b4c3dd35e8e2480a204ef5f">
+        <form class="form" name="edit" action="/my/edit/update_edit_name" method="post">
+            {!! csrf_field() !!}
+            {!! method_field('put') !!}
+
+        <input type="hidden" name="id" value="{{$user->id}}">
 
             <section>
                 <h2 class="h2 text-em mb10">プロフィール</h2>
@@ -39,12 +37,12 @@
                             <dl class="td-inner-sm mb10 clearfix">
                                 <dt class="pull-left">漢字</dt>
                                 <dd class="pull-left">
-                                    <input type="text" value="山田" class=" text-md " name="name">
+                                    <input type="text" value="{{$user->name}}" class=" text-md " name="name">
                                 </dd>
                             </dl>
                             <dl class="td-inner-sm clearfix">
                                 <dt class="pull-left">カナ</dt>
-                                <dd class="pull-left"><input type="text" value="てください" class=" text-md " name="kana"></dd>
+                                <dd class="pull-left"><input type="text" value="{{$user->kana}}" class=" text-md " name="kana"></dd>
                             </dl>
                             
                         </td>
@@ -52,9 +50,9 @@
                     <tr>
                         <th>性別<img src="/images/edit/icon_lock.png" alt="非公開" class="ml5"><span class="tag tag-xsm tag-primary pull-right">必須</span></th>
                         <td>
-                            
-                                男性<input name="sex" type="hidden" value="1">
-                            
+                             {{--<input name="sex" type="hidden" value="{{$user->sex}}">--}}
+                             <input type="radio" name="sex" value="1" @if($user->sex == 1) checked @endif>男性
+                             <input type="radio" name="sex" value="2" @if($user->sex == 2) checked @endif>女性
                         </td>
                     </tr>
                     <tr>
@@ -63,14 +61,14 @@
                             <dl class="td-inner-md mb10 clearfix">
                                 <dt class="pull-left">半角英数記号</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="email" value="canonpd@163.com" class=" text-md ">
+                                    <input type="text" name="email" value="{{$user->email}}" class=" text-md ">
                                 </dd>
                                 
                             </dl>
                             <dl class="td-inner-md clearfix">
                                 <dt class="pull-left">確認用</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="email2" value="canonpd@163.com" class=" text-md ">
+                                    <input type="text" name="email2" value="{{$user->email}}" class=" text-md ">
                                 </dd>
                                 
                             </dl>
@@ -82,52 +80,22 @@
                             <dl class="td-inner-md mb10 clearfix">
                                 <dt class="pull-left">半角英数記号</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="m_email" value="" class="form-md  text-md pull-left">
+                                    <input type="text" name="m_email" value="{{$user->m_email}}" class="form-md  text-md pull-left">
                                     <div class="mt5 ml10 mr10 pull-left">@</div>
                                     <div class="select form-sm pull-left">
                                         <select name="m_domain" class="">
                                             <option value="0">---</option>
                                             
-                                            <option value="docomo.ne.jp">docomo.ne.jp</option>
+                                            <option value="docomo.ne.jp" @if($user->m_domain == "docomo.ne.jp") selected @endif>docomo.ne.jp</option>
                                             
-                                            <option value="ezweb.ne.jp">ezweb.ne.jp</option>
+                                            <option value="ezweb.ne.jp" @if($user->m_domain == "ezweb.ne.jp") selected @endif>ezweb.ne.jp</option>
                                             
-                                            <option value="softbank.ne.jp">softbank.ne.jp</option>
+                                            <option value="softbank.ne.jp" @if($user->m_domain == "softbank.ne.jp") selected @endif>softbank.ne.jp</option>
                                             
-                                            <option value="d.vodafone.ne.jp">d.vodafone.ne.jp</option>
+                                            <option value="d.vodafone.ne.jp" @if($user->m_domain == "d.vodafone.ne.jp") selected @endif>d.vodafone.ne.jp</option>
                                             
-                                            <option value="h.vodafone.ne.jp">h.vodafone.ne.jp</option>
-                                            
-                                            <option value="t.vodafone.ne.jp">t.vodafone.ne.jp</option>
-                                            
-                                            <option value="c.vodafone.ne.jp">c.vodafone.ne.jp</option>
-                                            
-                                            <option value="k.vodafone.ne.jp">k.vodafone.ne.jp</option>
-                                            
-                                            <option value="r.vodafone.ne.jp">r.vodafone.ne.jp</option>
-                                            
-                                            <option value="n.vodafone.ne.jp">n.vodafone.ne.jp</option>
-                                            
-                                            <option value="s.vodafone.ne.jp">s.vodafone.ne.jp</option>
-                                            
-                                            <option value="q.vodafone.ne.jp">q.vodafone.ne.jp</option>
-                                            
-                                            <option value="i.softbank.jp">i.softbank.jp</option>
-                                            
-                                            <option value="pdx.ne.jp">pdx.ne.jp</option>
-                                            
-                                            <option value="di.pdx.ne.jp">di.pdx.ne.jp</option>
-                                            
-                                            <option value="dj.pdx.ne.jp">dj.pdx.ne.jp</option>
-                                            
-                                            <option value="dk.pdx.ne.jp">dk.pdx.ne.jp</option>
-                                            
-                                            <option value="wm.pdx.ne.jp">wm.pdx.ne.jp</option>
-                                            
-                                            <option value="disney.ne.jp">disney.ne.jp</option>
-                                            
-                                            <option value="willcom.com">willcom.com</option>
-                                            
+                                            <option value="h.vodafone.ne.jp" @if($user->m_domain == "h.vodafone.ne.jp") selected @endif>h.vodafone.ne.jp</option>
+
                                         </select>
                                     </div>
                                 </dd>
@@ -136,52 +104,22 @@
                             <dl class="td-inner-md clearfix">
                                 <dt class="pull-left">確認用</dt>
                                 <dd class="pull-left">
-                                    <input type="text" name="m_email2" value="" class="form-md  text-md pull-left">
+                                    <input type="text" name="m_email2" value="{{$user->m_email}}" class="form-md  text-md pull-left">
                                     <div class="mt5 ml10 mr10 pull-left">@</div>
                                     <div class="select form-sm pull-left">
                                         <select name="m_domain2" class="">
                                             <option value="0">---</option>
-                                            
-                                            <option value="docomo.ne.jp">docomo.ne.jp</option>
-                                            
-                                            <option value="ezweb.ne.jp">ezweb.ne.jp</option>
-                                            
-                                            <option value="softbank.ne.jp">softbank.ne.jp</option>
-                                            
-                                            <option value="d.vodafone.ne.jp">d.vodafone.ne.jp</option>
-                                            
-                                            <option value="h.vodafone.ne.jp">h.vodafone.ne.jp</option>
-                                            
-                                            <option value="t.vodafone.ne.jp">t.vodafone.ne.jp</option>
-                                            
-                                            <option value="c.vodafone.ne.jp">c.vodafone.ne.jp</option>
-                                            
-                                            <option value="k.vodafone.ne.jp">k.vodafone.ne.jp</option>
-                                            
-                                            <option value="r.vodafone.ne.jp">r.vodafone.ne.jp</option>
-                                            
-                                            <option value="n.vodafone.ne.jp">n.vodafone.ne.jp</option>
-                                            
-                                            <option value="s.vodafone.ne.jp">s.vodafone.ne.jp</option>
-                                            
-                                            <option value="q.vodafone.ne.jp">q.vodafone.ne.jp</option>
-                                            
-                                            <option value="i.softbank.jp">i.softbank.jp</option>
-                                            
-                                            <option value="pdx.ne.jp">pdx.ne.jp</option>
-                                            
-                                            <option value="di.pdx.ne.jp">di.pdx.ne.jp</option>
-                                            
-                                            <option value="dj.pdx.ne.jp">dj.pdx.ne.jp</option>
-                                            
-                                            <option value="dk.pdx.ne.jp">dk.pdx.ne.jp</option>
-                                            
-                                            <option value="wm.pdx.ne.jp">wm.pdx.ne.jp</option>
-                                            
-                                            <option value="disney.ne.jp">disney.ne.jp</option>
-                                            
-                                            <option value="willcom.com">willcom.com</option>
-                                            
+
+                                            <option value="docomo.ne.jp" @if($user->m_domain == "docomo.ne.jp") selected @endif>docomo.ne.jp</option>
+
+                                            <option value="ezweb.ne.jp" @if($user->m_domain == "ezweb.ne.jp") selected @endif>ezweb.ne.jp</option>
+
+                                            <option value="softbank.ne.jp" @if($user->m_domain == "softbank.ne.jp") selected @endif>softbank.ne.jp</option>
+
+                                            <option value="d.vodafone.ne.jp" @if($user->m_domain == "d.vodafone.ne.jp") selected @endif>d.vodafone.ne.jp</option>
+
+                                            <option value="h.vodafone.ne.jp" @if($user->m_domain == "h.vodafone.ne.jp") selected @endif>h.vodafone.ne.jp</option>
+
                                         </select>
                                     </div>
                                 </dd>

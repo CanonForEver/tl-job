@@ -122,6 +122,7 @@
 <script src="/vendor/assets/jquery/js.cookie-2.0.3.min.js"></script>
 <script src="/vendor/assets/jquery/jquery.plainmodal.min.js"></script>
 <script src="/assets/javascripts/common/fj.js"></script>
+<script src="/assets/javascripts/common/laravel.js"></script>
 
 <script src="/vendor/assets/jquery-ui/jquery-ui.min.js"></script>
 <script src="/vendor/assets/NProgress/nprogress.js"></script>

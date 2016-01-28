@@ -125,17 +125,33 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::group(['prefix' => 'edit'], function () {
             Route::get('edit', 'EditController@index');                             // 登录后,用户主页
-            Route::post('edit', 'EditController@edit');                             // 各种编辑...!!!
 
             Route::get('edit_name', 'EditController@edit_name');                    // 编辑用户信息
-            Route::post('change_passwd', 'EditController@change_passwd');           // 修改密码
-            Route::get('edit_scout', 'EditController@edit_scout');                  // 邮件通知
+            Route::put('update_edit_name', 'EditController@update_edit_name');    //更新用户信息
+
+            Route::get('edit_resume', 'EditController@edit_resume');                  //编辑用户履历
+            Route::put('update_resume', 'EditController@update_resume');              //更新用户履历
+            Route::get('add_resume', 'EditController@add_resume');                  //追加用户履历
+            Route::post('store_add_resume', 'EditController@store_add_resume');    //存储追加履历
+            Route::delete('/{resume_id}/delete_resume', 'EditController@delete_resume');     //删除履历
+
+            Route::get('edit_skill', 'EditController@edit_skill');                        // 编辑用户信息
+            Route::put('update_skill', 'EditController@update_skill');                    // 编辑用户信息
+
+            Route::get('edit_scout', 'EditController@edit_scout');                  // 修改跟踪设定
+            Route::put('update_scout', 'EditController@update_scout');                  // 更新跟踪设定
+
+            Route::get('edit_mail', 'EditController@edit_mail');                  //编辑希望条件
+            Route::put('update_edit_mail', 'EditController@update_edit_mail');                  //更新希望条件
+
+            Route::get('change_passwd', 'EditController@change_passwd');           // 修改密码
+            Route::put('do_change_passwd', 'EditController@do_change_passwd');           // 更新密码
         });
 
 
         Route::get('show_resume', 'IndexController@show_resume');                   // 显示履历信息
         Route::get('list_search_condition', 'IndexController@list_search_condition');       // 检索记录保存
-        Route::get('delete_search_condition', 'IndexController@delete_search_condition');   // 删除检索条件
+        Route::delete('/{search_id}/delete_search_condition', 'IndexController@delete_search_condition');   // 删除检索条件
 
 
         // 信息管理
