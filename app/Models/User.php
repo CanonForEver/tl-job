@@ -7,8 +7,36 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $fillable = [
-<<<<<<< HEAD
-        'email','password','name','kana','sex','birthday_year','birthday_month','birthday_day','ken','jusho','jusho2','tel','tel2','m_email','m_domain','g_name','g_gakubu','g_year','g_type','shokureki','s_other','k_jikyuu','k_gekkyuu','k_nenbou','html_mail','scout','mailservice_new','mailservice_pickup','mailservice_digest','mailservice_dm'
+        'email',
+        'password',
+        'name',
+        'kana',
+        'sex',
+        'birthday_year',
+        'birthday_month',
+        'birthday_day',
+        'ken',
+        'jusho',
+        'jusho2',
+        'tel',
+        'tel2',
+        'm_email',
+        'm_domain',
+        'g_name',
+        'g_gakubu',
+        'g_year',
+        'g_type',
+        'shokureki',
+        's_other',
+        'k_jikyuu',
+        'k_gekkyuu',
+        'k_nenbou',
+        'html_mail',
+        'scout',
+        'mailservice_new',
+        'mailservice_pickup',
+        'mailservice_digest',
+        'mailservice_dm',
     ];
 
     public function user_shokushus()
@@ -34,40 +62,12 @@ class User extends Model
     public function user_skill()
     {
         return $this->hasMany('App\Models\User_skill');
-=======
-        'email',
-        'password',
-        'k_jikyuu',
-        'k_gekkyuu',
-        'k_nenbou',
-        'html_mail',
 
-        'name',
-        'kana',
-        'sex',
-        'birthday_year',
-        'birthday_month',
-        'birthday_day',
-        'ken',
-        'jusho',
-        'jusho2',
-        'tel',
-        'tel2',
-        'email',
-        'm_email',
-        'm_domain',
-        'g_name',
-        'g_gakubu',
-        'g_year',
-        'g_type',
-        'shokureki'
-    ];
-
+    }
 
     //工作经历
     public function resumes()
     {
         return $this->hasMany('App\Models\Resume');
->>>>>>> master
     }
 }

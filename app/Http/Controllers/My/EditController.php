@@ -84,7 +84,7 @@ class EditController extends Controller
     function edit_resume()
     {
         $provinces = Province::get();
-        $skill_categories = Skill_category::with(['skill.user_skills' =>function($query){
+        $skill_categories = Skill_category::with(['skills.user_skills' =>function($query){
                             $query->where('user_id',$this->user['id'])
                                 ->where('value','>','0');
                             }])
@@ -141,7 +141,7 @@ class EditController extends Controller
     //修改职业技能
     function edit_skill()
     {
-        $skill_categories = Skill_category::with('skill')
+        $skill_categories = Skill_category::with('skills')
             ->orderBy('sort_order','asc')
             ->get();
 //        return $skill_categories;

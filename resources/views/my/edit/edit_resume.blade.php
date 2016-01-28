@@ -271,12 +271,12 @@
                 <table class="clear input-cell mb40">
                     @foreach($skill_categories as $skill_category)
                     <tr>
-                        <th>{{$skill_category['name']}}</th>
+                        <th>{{$skill_category->name}}</th>
                         <td>
-                            @foreach($skill_category['skill'] as $skill)
+                            @foreach($skill_category->skills as $skill)
                             @if(!$skill->user_skills->isEmpty())
                                 @foreach($skill->user_skills as $user_skill)
-                                <span >{{$skill['name']}}</span> ：
+                                <span >{{$skill->name}}</span> ：
                                 @if($user_skill->value == 1)独学
                                 @elseif($user_skill->value == 2)実務~1年
                                 @elseif($user_skill->value == 3)実務1~2年

@@ -75,8 +75,8 @@ class Controller extends BaseController
             'nenbous' => $nenbous,
             'provinces' => $provinces,
         ];
-        view()->share($this->comm_info);
 
+        view()->share($this->comm_info);
     }
 
 }
