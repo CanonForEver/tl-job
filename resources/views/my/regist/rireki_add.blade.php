@@ -19,7 +19,7 @@
 
             <h1 class="mb30">Web履歴書</h1>
 
-            <form method="post" class="form" name="regist_form" id='regist_form'
+            <form action="regist2" method="post" class="form" name="regist_form" id='regist_form'
                   onsubmit="document.edit_form.form.value='';">
                 <input type="hidden" name="submitted" value="rireki_add_form">
                 <input type="hidden" name="from" value="">
