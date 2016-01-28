@@ -87,7 +87,7 @@ Route::group(['middleware' => ['web']], function () {
             Route::post('edit_pr', 'jobController@edit_pr_store');
 
 
-
+            //预览
 
         });
 
