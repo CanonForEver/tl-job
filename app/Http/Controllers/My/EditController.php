@@ -36,7 +36,7 @@ class EditController extends Controller
         view()->share(['user' =>session('user')]);
     }
 
-    //验证错误信息
+    //验证错误信息  下一步
     private function messages()
     {
         return [
