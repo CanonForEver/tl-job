@@ -19,7 +19,7 @@ class EditController extends Controller
     }
 
 
-    //各种编辑...!!!
+    //各种编辑...!!!  没啥用
     function edit(Request $request)
     {
         dump($request->all());
