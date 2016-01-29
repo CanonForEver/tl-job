@@ -45,7 +45,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => 'tj'], function () {
         Route::get('search', 'TjController@search');                    //招聘列表
         Route::get('new', 'TjController@news');                         //最新职位
-    });
+        Route::get('add_to_bookmark_ajax', 'TjController@add_to_bookmark_ajax');                //关注职位
+});
 
     Route::group(['prefix' => 'list/{id}'], function () {
         Route::get('/', 'TjController@show');                           //招聘信息
@@ -102,7 +103,13 @@ Route::group(['middleware' => ['web']], function () {
 //        Route::delete('', 'MyController@destroy');
         });
 
-
+//        //职位搜索
+//        Route::group(['prefix' => 'tj'], function () {
+//            Route::get('news', 'TjController@inbox');                              //最新职位信息
+//            Route::get('search', 'TjController@outbox');                            // 职位搜索
+//            Route::get('show', 'TjController@memo');                                // 履历一览
+//            Route::get('show_com', 'TjController@memo');                                // 履历一览
+//        });
     });
 
 });

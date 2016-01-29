@@ -70,18 +70,14 @@
                         <h1 class="name" itemprop="name">株式会社ディエスピー</h1>
                         <p class="text-sm pull-right"><trans data-src="掲載期間：" data-dst="掲載期間：">招聘期间：</trans><span itemprop="datePosted"><trans data-src="2016/01/08" data-dst="2016 / 01 / 08">2016 / 01 / 08</trans></span><trans data-src="～2016/01/21" data-dst="～2016/01/21">～2016/01/21</trans></p>
 
-                        <h2 class="mb10">Web总监</h2>
+                        <h2 class="mb10">{{$job->shosai}}</h2>
 
                         <ul class="list-tag">
                             <li class="tag tag-xsm tag-new">NEW</li>
 
-                            <li class="tag tag-xsm tag-primary">社会保険完備</li>
-
-                            <li class="tag tag-xsm tag-primary">学歴不問</li>
-
-                            <li class="tag tag-xsm tag-primary">第二新卒</li>
-
-                            <li class="tag tag-xsm tag-primary">年俸制有り</li>
+                            @foreach($job->job_focus_words as $word)
+                                <li class="tag tag-xsm tag-primary">{{$word->focus_word->name}}</li>
+                            @endforeach
 
                         </ul>
                     </div>
@@ -113,11 +109,11 @@
                 <div class="box-tab">
                     <ul class="tab clearfix mb20">
                         <li class="tab-job ">
-                            <a href="/list/j108579">招聘信息</a>
+                            <a href="/list/{{$job->id}}">招聘信息</a>
                         </li>
 
                         <li class="tab-company current">
-                            <a href="/list/j108579/com">企业信息</a>
+                            <a href="/list/{{$job->id}}/com">企业信息</a>
                         </li>
                     </ul>
                 </div>
@@ -134,38 +130,39 @@
                     <tbody>
                     <tr>
                         <th>成立日</th>
-                        <td>2007 年 9 月</td>
+                        <td>{{$job->com->setup_year}} 年 {{$job->com->setup_month}} 月</td>
                     </tr>
                     <tr>
                         <th>法人</th>
-                        <td>野見山 哲</td>
+                        <td>{{$job->com->ceo}}</td>
                     </tr>
                     <tr>
                         <th>注册资本</th>
-                        <td>1000万円</td>
+                        <td>{{$job->com->capital}}</td>
                     </tr>
 
                     <tr>
                         <th>年間売上</th>
-                        <td>2013年 3月期 272億6500万円 (実績)<br>2012年 3月期 243億0200万円 (実績)</td>
+                        <td>{{$job->com->sales_year1}}年 {{$job->com->sales_month1}}月期 {{$job->com->sales1}}
+                            <br>{{$job->com->sales_year2}}年 {{$job->com->sales_month2}}月期  {{$job->com->sales2}}</td>
                     </tr>
 
                     <tr>
                         <th>从业人员数</th>
-                        <td>3名(グループ連結25名)</td>
+                        <td>{{$job->com->workers}}</td>
                     </tr>
                     <tr>
                         <th>事业内容</th>
-                        <td>マーケティング戦略構築、コミュニケーション関連ソリューションの提供<br>Webサイトなどの制作、ブランディング支援</td>
+                        <td> {{$job->com->business}}</td>
                     </tr>
 
                     <tr>
                         <th>主页</th>
-                        <td><a href="http://www.ds-p.jp/" rel="nofollow" target="_blank">http://www.ds-p.jp/</a></td>
+                        <td><a href="http://www.ds-p.jp/" rel="nofollow" target="_blank">{{$job->com->mail}}</a></td>
                     </tr>
                     <tr>
                         <th>地址</th>
-                        <td>東京都千代田区神田神保町1-1-17 東京堂神保町第3ビルディング8階</td>
+                        <td>{{$job->com->honsha}}</td>
                     </tr>
                     </tbody>
                 </table>

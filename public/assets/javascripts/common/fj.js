@@ -57,16 +57,19 @@ $(function(){
     if ( $(_self).hasClass('btn-disabled') ){ return };
 
     var jobId       = $(_self).data('jobId');
+
     var uniqKey     = $(_self).data('uniqKey');
     var action      = $(_self).data('action');
     var label       = $(_self).data('label');
 
-    $.get("/fj/add_to_bookmark_ajax.cgi", {job_id: jobId, unique_key: uniqKey},
+    $.get("/tj/add_to_bookmark_ajax", {job_id: jobId, unique_key: uniqKey},
       function(data){
+
         if (data){
+          console.log(jobId);
           //disable bookmark button
           $('a.fj-add-to-bookmark[data-job-id='+jobId+']').addClass('btn-disabled');
-          pageTracker._trackEvent('add_bookmark', action, label);
+          //pageTracker._trackEvent('add_bookmark', action, label);
 
         }
     })
@@ -79,7 +82,7 @@ $(function(){
     var action      = $(_self).data('action');
     var label       = $(_self).data('label');
 
-    pageTracker._trackEvent('add_bookmark', action, label);
+    //pageTracker._trackEvent('add_bookmark', action, label);
 
     $('.fj-login-modal').plainModal('open', {
       closeClass: 'fj-login-modal-close',

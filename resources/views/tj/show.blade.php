@@ -75,19 +75,13 @@
                                 </trans></span>
                             <trans data-src="～2016/01/21" data-dst="～2016/01/21">～2016/01/21</trans>
                         </p>
-                        <h2 class="mb10">Web总监</h2>
+                        <h2 class="mb10">{{$job->shosai}}</h2>
 
                         <ul class="list-tag">
                             <li class="tag tag-xsm tag-new">NEW</li>
-
-                            <li class="tag tag-xsm tag-primary">社会保険完備</li>
-
-                            <li class="tag tag-xsm tag-primary">学歴不問</li>
-
-                            <li class="tag tag-xsm tag-primary">第二新卒</li>
-
-                            <li class="tag tag-xsm tag-primary">年俸制有り</li>
-
+                            @foreach($job->job_focus_words as $word)
+                            <li class="tag tag-xsm tag-primary">{{$word->focus_word->name}}</li>
+                                   @endforeach
                         </ul>
                     </div>
 
@@ -118,11 +112,11 @@
                 <div class="box-tab">
                     <ul class="tab clearfix mb20">
                         <li class="tab-job current">
-                            <a href="/list/j108579">招聘信息</a>
+                            <a href="">招聘信息</a>
                         </li>
 
                         <li class="tab-company ">
-                            <a href="/list/j108579/com">企业信息</a>
+                            <a href="/list/{{$job->id}}/com">企业信息</a>
                         </li>
                     </ul>
                 </div>
@@ -131,20 +125,16 @@
 
             <div class="clearfix mb30">
 
-
                 <div class="box-detail-img-vertical bg-default box-sm pull-left mr30 mb20">
                     <img src="/images/h-abe4a93f.jpg" alt="「困ったときあなたの顔が浮かんだ」と&lt;br&gt;言われる存在になるのが目標です！" class="block">
-                    <p class="text-sm pt10">「困ったときあなたの顔が浮かんだ」と<br>言われる存在になるのが目標です！</p>
+                    <p class="text-sm pt10">{{$job->p_comment1}}</p>
                 </div>
 
-                <h2 class="text-showjob-xlg mb10">300ヶ所の保育園のWEBサイトをお任せします。<br>あなたの得意分野で、信頼される存在に。</h2>
+                <h2 class="text-showjob-xlg mb10">{{$job->catch_copy}}</h2>
                 <p class="line-width">
 
-                    私たちは、幼稚園・保育園・老人ホームに向けたWebプロモーション支援を手掛けています。保育業界・介護業界のお客様には、ITに詳しくない方、自分の施設をPRするのが不得意な方も。ときには、幼稚園の理事長先生と一緒に教育方針を言葉にしていったり、老人ホームの施設長と独自の強みを探ったり。保育士の先生にブログの書き方をレクチャーしたり。ときには、PCの使い方をイチからお教えすることだってあります。
-                    <br>
-                    <br>今回の採用では、Web業界出身者を募集中。前職の職種は問いません。この仕事には、自分が培ってきた経験や知識が活かせる場面がきっとあるからです。
-                    <br>
-                    <br>WEBサイトを利用していただき、お客様の『本当に伝えたかった事』を表現することで、「本当にありがとう」と握手を求められたり、私たちを「先生」と呼ぶ方もいらっしゃるくらい。WEBのプロとしてお客様に認められ、喜ばれ、頼られる手応えは想像以上です。
+
+                    <br>{{$job->pr_text}}
 
                 </p>
             </div>
@@ -154,17 +144,17 @@
 
                 <div class="box-detail-img-sm bg-default box-sm pull-left">
                     <img src="/images/b-510a0083.jpg" alt="個性溢れるメンバーたち。心地いい距離感&lt;br&gt;で仕事をしています。" class="block">
-                    <p class="text-sm pt10">個性溢れるメンバーたち。心地いい距離感<br>で仕事をしています。</p>
+                    <p class="text-sm pt10">{{$job->p_comment2}}</p>
                 </div>
 
                 <div class="box-detail-img-sm bg-default box-sm pull-left">
                     <img src="/images/b-31da659a.jpg" alt="施設のオリジナルのカラーを、お客様&lt;br&gt;と一緒にカタチにしていくお仕事です。" class="block">
-                    <p class="text-sm pt10">施設のオリジナルのカラーを、お客様<br>と一緒にカタチにしていくお仕事です。</p>
+                    <p class="text-sm pt10">{{$job->p_comment3}}</p>
                 </div>
 
                 <div class="box-detail-img-sm bg-default box-sm pull-left">
                     <img src="/images/b-97a66851.jpg" alt="「相談して良かった！」と嬉しいメール&lt;br&gt;をいただくことも日常茶飯事です。" class="block">
-                    <p class="text-sm pt10">「相談して良かった！」と嬉しいメール<br>をいただくことも日常茶飯事です。</p>
+                    <p class="text-sm pt10">{{$job->p_comment4}}</p>
                 </div>
 
             </div>
@@ -184,68 +174,21 @@
                         <th>职业</th>
                         <td>
 
-                            <span itemprop="title">Webディレクター</span>
+                            <span itemprop="title">{{$job->this_shokushu->name}}</span>
 
                         </td>
                     </tr>
 
                     <tr>
                         <th>公司背景</th>
-                        <td>保育業界(幼稚園・保育園)のお客様に対し、WEBサイト制作・更新運用のサポート・カスタマーサービスを提供しています。
-                            <br>介護施設からの問い合わせも増えており、介護福祉業界のマーケット開拓をすることになりました。
-                            <br>今回の募集では、既存のお客様とのやり取りに加え、新規事業のコアメンバーとして活躍していただきます。
-                        </td>
+                        <td>{{$job->background}}
+                            </td>
                     </tr>
 
                     <tr>
                         <th>工作内容</th>
                         <td>
-                    <span itemprop="description">300ヶ所の保育園・幼稚園のWEBディレクション業務(提案やヒアリング・問題解決・サイトマップ作成・ワイヤーフレーム作成・スケジュール管理・顧客折衝など)、
-<br>更新運用サポート、PCの操作説明やメールアドレスの設定や更新業務のレクチャーなどカスタマーサービス業務をお願いします。
-<br>お客様を大切に考え、お客様の気持ちを理解し、一緒になって悩みを解決していくお手伝いをお願いします。
-<br>
-<br>WEBディレクター経験者は、経験や知識等を加味し、担当していただくポジションを決定します。
-<br>WEBディレクター未経験だがWEB業界経験者は、経験を活かしながらディレクション業務を覚えていただきます。
-<br>例)WEBデザインの経験がある方は、サイトのデザインやコーディングをおこなっていただきながら、ディレクションを覚えていただきます。
-<br>例)営業の経験のある方は、新規顧客獲得や既存顧客のアプローチをしながら、ディレクション(特に、ヒアリングや提案)を覚えていただきます。
-<br>未経験者は、アシスタントディレクターとして先輩社員のサポート、WEBディレクションやITスキルの知識を覚えていただきます。
-<br>
-<br>【仕事の流れ】
-<br>▼ヒアリング・ご提案
-<br>お客様先へ訪問し、ヒアリングやご要望を聞きご提案します。
-<br>その際、現状の問題点や課題等を把握し、施設の独自性や強みなどを引き出していきます。
-<br>
-<br>▼制作
-<br>原稿収集やスケジュール管理、外部のパートナーとの連携をはかりお客様の要望をカタチにしていきます。
-<br>
-<br>▼納品
-<br>公開後には必ず更新研修をおこない、お客様との信頼関係を作っていきます。
-<br>
-<br>▼更新運用
-<br>お電話やFAXなどで更新や修正依頼がきますので、随時対応していきます。
-<br>また、アクセス解析による効果検証などをおこない、改善のご提案をします。
-<br>
-<br>【仕事のポイント】
-<br>◎お客様と利用者の立場を考えることが大切！
-<br>お客様の要望をお聞きし、施設の独自性や強みなどをWEBサイトに反映することも大切ですが
-<br>そのサイトを閲覧する利用者の立場になって考えることも大切です。
-<br>
-<br>◎お客様へのホスピタリティ
-<br>PCの操作が不慣れな方、ITに詳しくない方も多くいますので、WEB業界でよくある「専門用語」などは極力使わないようにしてください。
-<br>お客様は困って当社を信頼してお問い合わせしてきておりますので、ホスピタリティ精神で対応してください。
-<br>
-<br>【採用担当より】
-<br>小人数ですので、ディレクションやクライアント対応(電話応対、更新運用サポート)のみではなく、
-<br>ご自分の得意分野(デザインや営業など)の範囲で業務もお任せいたします。
-<br>
-<br>ディレクターとして、実務経験をお持ちでなくとも、デザイン・営業等の経験をお持ちであればご応募ください。
-<br>案件により、WEBデザインや企画提案などのディレクション業務も兼務していただきます。
-<br>
-<br>未経験者でも働く環境をご用意しております。
-<br>はじめは誰でも未経験ですので、「WEBの業界で働きたい！」やる気がある方からのご応募をお待ちしております。
-<br>
-<br>社内の雰囲気も良好で、制作会社にありがちな「長時間労働・過渡な残業」はありません。
-<br>また、月1回「ディナーミーティング」を開催し意見交換をしたり、働きやすい環境となっています。</span>
+                    <span itemprop="description">{{$job->job_details}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -254,13 +197,15 @@
 
 
                             <strong>1. </strong><span itemprop="employmentType"
-                                                      class="employmentType">正社員(中途)</span><img
+                                                      class="employmentType">{{$job->this_keitai1->name}}</span><img
                                     src="/images/begginer.png" alt="未経験可">
 
                             <strong>2. </strong><span itemprop="employmentType"
-                                                      class="employmentType">正社員(中途)</span><img
+                                                      class="employmentType">{{$job->this_keitai2->name}}</span><img
                                     src="/images/begginer.png" alt="未経験可">
-
+                            <strong>3. </strong><span itemprop="employmentType"
+                                                      class="employmentType">{{$job->this_keitai3->name}}</span><img
+                                    src="/images/begginer.png" alt="未経験可">
 
                         </td>
                     </tr>
@@ -268,31 +213,10 @@
                     <tr>
                         <th>应征资格</th>
                         <td>
+                            <br>1.{{$job->sikaku1}}
+                            <br>2.{{$job->sikaku2}}
+                            <br>3.{{$job->sikaku3}}
 
-                            仕事や行動に責任を持ち、仲間との意思統一がはかれ、お客様を大切にできる方の応募をお待ちしています。
-                            <br>
-                            <br>【必須スキル・経験】
-                            <br>・社会人経験
-                            <br>・Office系ソフト等の使用経験
-                            <br>
-                            <br>【歓迎するスキル・経験】
-                            <br>・営業のご経験がある方(法人営業、提案型営業などの経験)
-                            <br>※介護福祉業界での営業経験者は優遇いたします。
-                            <br>・デザイナーのご経験がある方(デザインやコーディング、WordPressなどの構築経験)
-                            <br>・ディレクターのご経験がある方(提案やコンサルティングなどの経験)
-                            <br>・お客様との折衝経験がある方(飲食店などの接客経験がある方)
-                            <br>
-                            <br>【歓迎する人物像】
-                            <br>・コミュニケーション能力が高く、協調性がある方
-                            <br>・明るく、社交的な方
-                            <br>・やる気があり、進んで仕事をする方
-                            <br>・一般常識がある方
-                            <br>・お客様視点で、ものを考える事ができ満足を第一に考えられる方
-                            <br>・お客様を大切にできる方
-                            <br>・自分の仕事がお客様の役に立っている、という実感を得たい方
-                            <br>・前向きな気持ちを持って、経験したことのない仕事にもチャレンジできる方
-                            <br>
-                            <br>ディレクター経験者、これからディレクターにチャレンジしたい方からのご応募をお待ちしております。
 
                         </td>
                     </tr>
@@ -300,15 +224,12 @@
                     <tr>
                         <th>工作地</th>
                         <td>
-                    
+
                         <span itemprop="jobLocation" itemscope="" itemtype="http://schema.org/Place" class="fn">
                             <span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="fn">
-                                <span itemprop="addressLocality" class="fn">東京都千代田区神田神保町1-1-17 東京堂神保町第3ビルディング8F </span>
+                                <span itemprop="addressLocality" class="fn">{{$job->jusho}}</span>
                             </span>
-                        </span><br><br>【最寄駅】<br>■都営三田線・新宿線、東京メトロ半蔵門線「神保町」駅(A5・A7出口)より徒歩2分
-                            <br>■東京メトロ東西線「竹橋」駅(3b出口)より徒歩6分
-                            <br>■東京メトロ千代田線「新御茶ノ水」駅(B7出口)より徒歩5分
-                            <br>■JR線「御茶ノ水」駅(御茶ノ水橋口)より徒歩8分
+                        </span>
 
                         </td>
                     </tr>
@@ -316,33 +237,35 @@
                         <th>工作时间</th>
                         <td>
 
-                            <span itemprop="workHours">9：00〜18：00</span>
+                            <span itemprop="workHours">{{$job->jikan1}}</span>
 
                         </td>
                     </tr>
                     <tr>
                         <th>工资</th>
                         <td class="indent">
-
-                            <b>1. </b> 年俸360万円 〜 <br>経験者：月給30万円 〜 40万円
-                            <br>※経験・能力・前給を考慮し優遇有。　<br><b>2. </b> 年俸300万円 〜 <br>未経験者：月給23万円 〜 30万円
-                            <br>※上記はあくまでも想定年収です。ご経験・スキルを考慮の上、決定いたします。
-                            <br><br>【研修・試用期間】<br>試用期間3ヶ月 (この期間の給与は本採用時と同額です)
+                            <p>1.{{$job->ky3_kind}}{{$job->ky1_from}}</p>
+                            <p>2.{{$job->ky3_kind}}{{$job->ky2_from}}</p>
+                            <p>3.{{$job->ky3_kind}}{{$job->ky3_to}}</p>
 
                         </td>
                     </tr>
                     <tr>
                         <th>福利待遇</th>
                         <td>
-
-                            交通費一部支給 (上限月額2万円) <br>昇給年1回、各種社会保険完備
+                            <br>{{$job->koutsuuhi1}}
+                            <br>{{$job->koutsuuhi2}}
+                            <br>{{$job->koutsuuhi3}}
                         </td>
                     </tr>
                     <tr>
-                        <th>休息日・休假</th>
+                        <th>休息日・休假
+                        </th>
                         <td>
 
-                            完全週休2日制(土日)、祝日、夏季休暇、年末年始休暇、GW
+                            <br>{{$job->kyujitu1}}
+                            <br>{{$job->kyujitu2}}
+                            <br>{{$job->kyujitu3}}
 
                         </td>
                     </tr>
@@ -352,30 +275,12 @@
                         </th>
                         <td>
                             <ul>
+                                @foreach($job->job_focus_words as $word)
                                 <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="経験者優遇" data-dst="経験者優遇" style="background: transparent;">経験者優遇
+                                    <trans data-src="経験者優遇" data-dst="経験者優遇" style="background: transparent;">{{$word->focus_word->name}}
                                     </trans>
                                 </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="社会保険完備" data-dst="社会保険完備">社会保険完備</trans>
-                                </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="女性も歓迎の仕事" data-dst="女性欢迎的工作" style="background: transparent;">
-                                        女性欢迎的工作
-                                    </trans>
-                                </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="学歴不問" data-dst="学歴不問">学歴不問</trans>
-                                </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="服装自由" data-dst="服装自由">服装自由</trans>
-                                </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="正社員登用制度有り" data-dst="正社員登用制度有り">正社員登用制度有り</trans>
-                                </li>
-                                <li class="tag tag-xsm tag-primary">
-                                    <trans data-src="残業手当有り" data-dst="残業手当有り">残業手当有り</trans>
-                                </li>
+                                @endforeach
                             </ul>
                         </td>
                     </tr>
@@ -402,31 +307,18 @@
             </ul>
             <!-- /apply_buttons_center -->
 
-
             <section>
                 <div class="clearfix mb40">
 
                     <div class="box-detail-img-md bg-default box-sm pull-right ml30 mb10">
                         <img src="/images/b-c98a1110.jpg" alt="化粧品販売も私たちが手掛ける事業の一つ。
 &lt;br&gt;新事業の立ち上げも大歓迎です！" class="block">
-                        <p class="text-sm pt10">化粧品販売も私たちが手掛ける事業の一つ。
-                            <br>新事業の立ち上げも大歓迎です！</p>
+                        <p class="text-sm pt10">{{$job->p_comment5}}</p>
                     </div>
 
-                    <h2 class="text-showjob-xlg mb10">多彩な事業を展開しています！</h2>
+                    <h2 class="text-showjob-xlg mb10">{{$job->free_title}}</h2>
                     <p class="line-width">
-                        当社では、幼稚園・保育園向けの制作サービス以外にも事業を展開しています。
-                        <br>これから注力したいのは、介護業界向けに制作サービスになります。
-                        <br>WEBサイトを「広告」から「広報・啓蒙」という観点で、介護・福祉についてご家族や地域の方々へ理解をしていただけるような
-                        <br>サービスにしていきたいと思います。
-                        <br>
-                        <br>制作サービスの提供では、オウンドメディアやUXのWebマーケティングのトレンドなども取り入れながら、
-                        <br>「顧客の視点や利用体験を考える」ことを念頭においた独自のノウハウを構築していきます。
-                        <br>他の事業やサービスともノウハウを活かし、連携できるように化粧品販売事業やグループ会社との事業強化を図っていきます。
-                        <br>
-                        <br>このように多角的な事業を展開することで、安定的な経営体制を築くだけでなく、
-                        <br>メンバーの可能性を広げていきたいという思いもあります。
-                        <br>興味があれば新規事業に関わったり、新しい職種にチャレンジすることも可能です！
+                        {{$job->free_body}}
                     </p>
                 </div>
             </section>
@@ -438,16 +330,13 @@
                     <div class="box-detail-img-md bg-default box-sm pull-right ml30 mb10">
                         <img src="/images/b-d9e186aa.jpg" alt="いい仕事はいい職場から生まれると考えて
 &lt;br&gt;いるので、明るい雰囲気を心掛けています。" class="block">
-                        <p class="text-sm pt10">いい仕事はいい職場から生まれると考えて
-                            <br>いるので、明るい雰囲気を心掛けています。</p>
+                        <p class="text-sm pt10">{{$job->p_comment6}}</p>
                     </div>
 
-                    <h2 class="text-showjob-xlg mb10">個性溢れるメンバーのご紹介</h2>
-                    <p class="line-width">当社は代表の野見山と澁谷、深谷の3名で構成されています。ここでは、それぞれのメンバーに対する印象を紹介します！
-                        <br>
-                        <br>■野見山の印象⇒いつでも冷静沈着で穏やか。怒った姿を見たことがありません。経営知識が豊富で、着実に会社を成長させるプロ。ワクワクする仕事がしたいという思いが強く、新しい事業構想も次々と生み出しています。
-                        <br>■澁谷の印象⇒当社のムードメーカー。飲食業界出身なのでコミュニケーション力が高く、お客様から絶大な信頼を寄せられています。ある園長からは「ウチの保育園を継いでほしい」と熱心にスカウトされたことも(笑)。
-                        <br>■深谷の印象⇒制作会社やシステム会社、SEO会社でのディレクター、営業、人事など豊富な経験を持っています。多趣味で好奇心旺盛なため、どんなお客様とも話が盛り上がるのが魅力です。</p>
+                    <h2 class="text-showjob-xlg mb10">{{$job->free_title2}}</h2>
+                    <p class="line-width">
+                        {{$job->free_body2}}
+                    </p>
                 </div>
             </section>
 
@@ -475,7 +364,7 @@
                                                                                 class="block">
                     <p class="text-sm pt10">
                         <trans data-src="最新技術も研究。社員運営のレスポンシブデザインのギャラリーサイト(25万PV/月)。"
-                               data-dst="最新技术研究。公司运营的レスポンシブデザイン的画廊网站（25万/月)。PV">最新技术研究。公司运营的レスポンシブデザイン的画廊网站（25万/月)。PV
+                               data-dst="最新技术研究。公司运营的レスポンシブデザイン的画廊网站（25万/月)。PV">{{$job->p_comment5}}
                         </trans>
                     </p>
                 </div>
@@ -483,7 +372,7 @@
                                                                                 alt="和気藹々とした明るい雰囲気の職場です。" class="block">
                     <p class="text-sm pt10">
                         <trans data-src="和気藹々とした明るい雰囲気の職場です。" data-dst="和蔼可亲的明亮的气氛的职场。"
-                               style="background: transparent;">和蔼可亲的明亮的气氛的职场。
+                               style="background: transparent;">{{$job->p_comment6}}
                         </trans>
                     </p>
                 </div>
@@ -492,7 +381,7 @@
                                                                                 class="block">
                     <p class="text-sm pt10">
                         <trans data-src="BBQや社員旅行などメンバーが自由に企画。参加率はとても高いです。" data-dst="时和职员旅行等成员自由企。参加率很高。">
-                            时和职员旅行等成员自由企。参加率很高。
+                            {{$job->p_comment7}}
                         </trans>
                     </p>
                 </div>
@@ -512,7 +401,7 @@
                         <th>应征方法</th>
                         <td>
 
-                            Find Job !の応募フォームよりご応募ください。
+                            {{$job->how_apply1}}
 
 
                         </td>
@@ -521,19 +410,8 @@
                         <th>遴选过程</th>
                         <td>
 
-                            ◎ ご応募から内定までは、2〜3週間程度とお考えください。 ◎
-                            <br>
-                            <br>【STEP1】Find Job !応募フォームによる書類選考
-                            <br>▼
-                            <br>【STEP2】1次面接
-                            <br>※面接の際に課題提出をお願いする場合があります。
-                            <br>▼
-                            <br>【STEP3】2次面接
-                            <br>▼
-                            <br>【STEP4】内定
-                            <br>
-                            <br>※選考においてはなるべくスピーディーに行ないます。
-                            <br>※面接日や入社日などは考慮しますので、ご相談ください。
+                            <br>{{$job->process}}
+
 
                         </td>
                     </tr>
@@ -541,7 +419,7 @@
                         <th>面试地</th>
                         <td>
 
-                            東京都千代田区神田神保町1-1-17 東京堂神保町第3ビルディング8F
+                            <br>{{$job->mensetuti}}
 
                             <a href="http://www.find-job.net/fj/map.cgi?id=108579"
                                class="icon icon-arrow02-xs">地図を見る</a>
